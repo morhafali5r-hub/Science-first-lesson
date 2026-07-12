@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رحلة التكوين - تحديد الجنس</title>
+    
+    <!-- Google Fonts: Tajawal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-color: #030712; /* Obsidian Dark / Deep Space */
+            --glass-bg: rgba(17, 25, 40, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --cyan-glow: #06b6d4;
+            --blue-glow: #3b82f6;
+            --pink-glow: #ec4899;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* الإضاءات الإشعاعية في الخلفية */
+        .glow-circle {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(100px);
+            z-index: -1;
+            animation: pulseGlow 8s infinite alternate;
+        }
+        .glow-1 {
+            top: -10%; right: -10%;
+            width: 40vw; height: 40vw;
+            background: rgba(6, 182, 212, 0.15); /* Cyan */
+        }
+        .glow-2 {
+            bottom: -10%; left: -10%;
+            width: 50vw; height: 50vw;
+            background: rgba(59, 130, 246, 0.15); /* Blue */
+        }
+        .glow-3 {
+            top: 40%; left: 30%;
+            width: 30vw; height: 30vw;
+            background: rgba(236, 72, 153, 0.1); /* Pink */
+        }
+
+        @keyframes pulseGlow {
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(1.2); opacity: 1; }
+        }
+
+        /* الحاويات الزجاجية (Glassmorphism) */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 15px 40px 0 rgba(0, 0, 0, 0.4);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* 1. Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            padding-top: 2rem;
+        }
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(to left, #fff, var(--cyan-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 40px rgba(6, 182, 212, 0.3);
+        }
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* تأثير الخلايا الطافية */
+        .floating-cells {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .cell {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 70%);
+            opacity: 0.3;
+            animation: floatCell infinite alternate ease-in-out;
+        }
+        .cell:nth-child(1) { width: 50px; height: 50px; top: 20%; right: 15%; animation-duration: 4s; }
+        .cell:nth-child(2) { width: 30px; height: 30px; top: 60%; left: 20%; animation-duration: 5s; animation-delay: 1s; }
+        .cell:nth-child(3) { width: 80px; height: 80px; top: 75%; right: 30%; animation-duration: 6s; animation-delay: 2s; }
+        
+        @keyframes floatCell {
+            0% { transform: translateY(0) translateX(0); }
+            100% { transform: translateY(-40px) translateX(20px); }
+        }
+
+        /* 2. Cards Section (Gender Determination) */
+        section {
+            padding: 5rem 0;
+            position: relative;
+            z-index: 10;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 3rem;
+            color: #fff;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        @media (min-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr 1fr; }
+        }
+
+        .gender-card {
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .gender-card i {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+        .female-card i { color: var(--pink-glow); text-shadow: 0 0 20px rgba(236, 72, 153, 0.5); }
+        .male-card i { color: var(--cyan-glow); text-shadow: 0 0 20px rgba(6, 182, 212, 0.5); }
+        
+        .gender-card h3 { font-size: 2rem; margin-bottom: 1rem; }
+        .gender-card ul {
+            list-style: none;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+        .gender-card ul li {
+            margin-bottom: 0.8rem;
+            padding: 0.5rem;
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+        }
+
+        .highlight-banner {
+            margin-top: 3rem;
+            background: linear-gradient(90deg, rgba(6,182,212,0.1) 0%, rgba(59,130,246,0.2) 50%, rgba(6,182,212,0.1) 100%);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            text-align: center;
+            padding: 1.5rem;
+            border-radius: 16px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fff;
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.1);
+        }
+
+        /* 3. Timeline Section */
+        .timeline-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: rgba(255,255,255,0.1);
+            top: 0; bottom: 0; right: 50%;
+            margin-right: -2px;
+            border-radius: 2px;
+        }
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px; height: 20px;
+            right: -10px;
+            background-color: var(--bg-color);
+            border: 4px solid var(--cyan-glow);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+            box-shadow: 0 0 10px var(--cyan-glow);
+        }
+        .left { right: 50%; }
+        .right { right: 0; }
+        .right::after { right: auto; left: -10px; }
+        
+        .timeline-content {
+            padding: 1.5rem;
+        }
+        .timeline-content h4 { color: var(--cyan-glow); font-size: 1.3rem; margin-bottom: 0.5rem; }
+
+        @media (max-width: 767px) {
+            .timeline-container::after { right: 31px; }
+            .timeline-item { width: 100%; padding-right: 70px; padding-left: 0; }
+            .left, .right { right: 0; }
+            .timeline-item::after { right: 21px; left: auto; }
+            .right::after { right: 21px; left: auto; }
+        }
+
+        /* 4. Flowchart / Mind Map */
+        .flowchart-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        @media (min-width: 992px) {
+            .flowchart-grid { grid-template-columns: 1fr 1fr; gap: 4rem; }
+        }
+        
+        .path-column {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            position: relative;
+        }
+        .path-title {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            padding: 1rem;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.05);
+        }
+        .male-path .path-title { color: var(--blue-glow); border-bottom: 3px solid var(--blue-glow); }
+        .female-path .path-title { color: var(--pink-glow); border-bottom: 3px solid var(--pink-glow); }
+
+        .flow-step {
+            text-align: center;
+            padding: 1rem;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            position: relative;
+        }
+        .flow-arrow {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            opacity: 0.5;
+        }
+        .male-path .flow-step { border-right: 3px solid rgba(59, 130, 246, 0.5); }
+        .female-path .flow-step { border-right: 3px solid rgba(236, 72, 153, 0.5); }
+        
+        .flow-result {
+            margin-top: 1rem;
+            display: flex;
+            gap: 1rem;
+        }
+        .flow-result .flow-step { flex: 1; font-size: 0.9rem; }
+
+        /* 5. Footer */
+        footer {
+            padding: 4rem 1.5rem;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+            margin-top: 4rem;
+            position: relative;
+            z-index: 10;
+        }
+        footer p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+        footer .heart {
+            color: var(--pink-glow);
+            animation: heartbeat 1.5s infinite;
+            display: inline-block;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        /* Scroll Animation Classes (Intersection Observer) */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- أضواء الخلفية -->
+    <div class="glow-circle glow-1"></div>
+    <div class="glow-circle glow-2"></div>
+    <div class="glow-circle glow-3"></div>
+
+    <!-- 1. الواجهة الرئيسية (Hero Section) -->
+    <header class="hero">
+        <div class="floating-cells">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+        </div>
+        <div class="container reveal">
+            <h1>رحلة التكوين</h1>
+            <p>آلية تحديد الجنس وتطور الجهاز التناسلي الجنيني عند الإنسان. اكتشف كيف تبدأ الحياة وكيف تتشكل الفروق الدقيقة من خلية واحدة إلى جهاز متكامل.</p>
+        </div>
+    </header>
+
+    <!-- 2. قسم البطاقات (الصيغة الصبغية) -->
+    <section class="container">
+        <h2 class="section-title reveal">تحديد الجنس والتكوين الجيني</h2>
+        <div class="grid-2">
+            
+            <div class="glass-card gender-card female-card reveal">
+                <i class="fa-solid fa-venus"></i>
+                <h3>الأنثى</h3>
+                <ul>
+                    <li>الصبغيات: <strong>46 صبغي</strong></li>
+                    <li>التركيب الجيني: <strong>XX</strong></li>
+                    <li>صيغة الأعراس (البويضة): <strong>1n = 22A + X</strong></li>
+                </ul>
+            </div>
+
+            <div class="glass-card gender-card male-card reveal">
+                <i class="fa-solid fa-mars"></i>
+                <h3>الذكر</h3>
+                <ul>
+                    <li>الصبغيات: <strong>46 صبغي</strong></li>
+                    <li>التركيب الجيني: <strong>XY</strong></li>
+                    <li>صيغة الأعراس (النطفة): <strong>1n = 22A + X</strong> أو <strong>1n = 22A + Y</strong></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="highlight-banner reveal">
+            <i class="fa-solid fa-microscope" style="margin-left: 10px;"></i>
+            النطفة هي التي تحدد جنس الجنين عند الإلقاح بفضل احتوائها إما على الصبغي X أو Y.
+        </div>
+    </section>
+
+    <!-- 3. الخط الزمني (Timeline) -->
+    <section class="container">
+        <h2 class="section-title reveal">بداية التشكل</h2>
+        <div class="timeline-container">
+            
+            <div class="timeline-item left reveal">
+                <div class="glass-card timeline-content">
+                    <h4>الأسبوع السابع من الحمل</h4>
+                    <p>تبدأ المراحل الحاسمة لتطور الجهاز التناسلي، حيث يكون الجنين في مرحلة غير متمايزة جنسياً حتى هذا الوقت.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item right reveal">
+                <div class="glass-card timeline-content">
+                    <h4>الوريقة الوسطى (Mesoderm)</h4>
+                    <p>ينشأ الجهاز التناسلي من هذه الطبقة الجنينية الهامة التي تشكل أساس العديد من الأجهزة الحيوية.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item left reveal">
+                <div class="glass-card timeline-content">
+                    <h4>التشكل البدائي</h4>
+                    <p>تتشكل "بداءة المنسل" (Gonadal Ridge) المرافقة لأنبوبي <strong>وولف</strong> (الأقنية الذكرية) و<strong>مولر</strong> (الأقنية الأنثوية) في كلا الجنسين كبداية متساوية.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. خريطة المفاهيم (Flowchart) -->
+    <section class="container">
+        <h2 class="section-title reveal">مسار التمايز الجنسي</h2>
+        <div class="glass-card reveal">
+            <div class="flowchart-grid">
+                
+                <!-- المسار الذكري -->
+                <div class="path-column male-path">
+                    <div class="path-title"><i class="fa-solid fa-mars"></i> المسار الذكري (وجود الصبغي Y)</div>
+                    
+                    <div class="flow-step">تفعيل مورثة <strong>SRY</strong> الموجودة على الصبغي Y</div>
+                    <div class="flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+                    
+                    <div class="flow-step">توجيه بداءة المنسل لتتطور إلى <strong>خصية</strong></div>
+                    <div class="flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+                    
+                    <div class="flow-result">
+                        <div class="flow-step">
+                            إفراز <strong>التستوسترون</strong>
+                            <hr style="margin: 5px 0; border-color: rgba(255,255,255,0.1)">
+                            تطور أنبوبا وولف (أقنية ذكرية)
+                        </div>
+                        <div class="flow-step">
+                            إفراز هرمون <strong>AMH</strong>
+                            <hr style="margin: 5px 0; border-color: rgba(255,255,255,0.1)">
+                            ضمور أنبوبا مولر
+                        </div>
+                    </div>
+                </div>
+
+                <!-- المسار الأنثوي -->
+                <div class="path-column female-path">
+                    <div class="path-title"><i class="fa-solid fa-venus"></i> المسار الأنثوي (غياب الصبغي Y)</div>
+                    
+                    <div class="flow-step">غياب مورثة <strong>SRY</strong> (لعدم وجود صبغي Y)</div>
+                    <div class="flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+                    
+                    <div class="flow-step">تتطور بداءة المنسل تلقائياً إلى <strong>مبيض</strong></div>
+                    <div class="flow-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+                    
+                    <div class="flow-result">
+                        <div class="flow-step">
+                            غياب التستوسترون
+                            <hr style="margin: 5px 0; border-color: rgba(255,255,255,0.1)">
+                            ضمور أنبوبا وولف
+                        </div>
+                        <div class="flow-step">
+                            غياب هرمون AMH
+                            <hr style="margin: 5px 0; border-color: rgba(255,255,255,0.1)">
+                            تطور أنبوبا مولر (أقنية أنثوية)
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. التذييل (Footer) -->
+    <footer>
+        <div class="container reveal">
+            <p>
+                "من نطفة صغيرة إلى جهاز دقيق التكوين، دعوة للتفكر في الإعجاز العلمي والخلقي الرائع داخل الجسد البشري." 
+                <br><br>
+                <i class="fa-solid fa-heart heart"></i>
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript (للتأثيرات الحركية أثناء التمرير) -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // تحديد جميع العناصر التي تحتوي على كلاس reveal
+            const reveals = document.querySelectorAll(".reveal");
+
+            // إعداد الـ Intersection Observer
+            const revealOptions = {
+                threshold: 0.15, // تفعيل التأثير عندما يظهر 15% من العنصر
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    } else {
+                        // إضافة كلاس active للعنصر الظاهر
+                        entry.target.classList.add("active");
+                        // إيقاف المراقبة للعنصر بعد ظهوره لمرة واحدة (يمكن إزالتها إذا أردت تكرار التأثير)
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, revealOptions);
+
+            // تطبيق المراقبة على كل عنصر
+            reveals.forEach(reveal => {
+                revealOnScroll.observe(reveal);
+            });
+            
+            // تفعيل فوري للعناصر المرئية أعلى الصفحة عند التحميل
+            setTimeout(() => {
+                reveals.forEach(reveal => {
+                    if(reveal.getBoundingClientRect().top < window.innerHeight) {
+                        reveal.classList.add("active");
+                    }
+                });
+            }, 100);
+        });
+    </script>
+</body>
+</html>
