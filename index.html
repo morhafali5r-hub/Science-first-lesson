@@ -2,655 +2,488 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>جهاز التكاثر والتمايز الجنسي</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المرجع الشامل: جهاز التكاثر والتمايز الجنسي وتشكل النطاف</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     
     <style>
         :root {
-            --bg-body: #f8fafc;
-            --text-main: #1e293b;
-            --text-muted: #475569;
-            --primary: #2563eb;
-            --primary-hover: #1d4ed8;
-            --success: #10b981;
-            --danger: #ef4444;
-            --warning: #f59e0b;
+            --bg-color: #f4f7f6;
+            --main-text: #2d3748;
+            --muted-text: #4a5568;
+            --primary: #1a365d;
+            --secondary: #2b6cb0;
+            --accent: #3182ce;
+            --success: #2f855a;
+            --danger: #c53030;
             --card-bg: #ffffff;
-            --border-color: #e2e8f0;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 10px 15px rgba(0, 0, 0, 0.1);
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+        * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+        body { font-family: 'Tajawal', sans-serif; background-color: var(--bg-color); color: var(--main-text); line-height: 1.8; padding-bottom: 100px; }
 
-        body {
-            background-color: var(--bg-body);
-            color: var(--text-main);
-            font-family: 'Tajawal', sans-serif;
-            line-height: 1.8;
-            padding-bottom: 120px;
-        }
+        /* Header */
+        .hero { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 60px 20px; text-align: center; border-bottom: 5px solid var(--accent); box-shadow: var(--shadow); margin-bottom: 40px; }
+        .hero h1 { font-size: 2.6rem; font-weight: 900; margin-bottom: 15px; }
+        .hero p { font-size: 1.2rem; font-weight: 500; opacity: 0.9; }
 
-        .header {
-            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-            color: white;
-            padding: 70px 20px 50px;
-            text-align: center;
-            border-bottom-left-radius: 50px;
-            border-bottom-right-radius: 50px;
-            margin-bottom: 40px;
-            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.15);
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        .header h1 { font-size: 2.8rem; font-weight: 900; margin-bottom: 15px; text-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-        .header p { font-size: 1.2rem; opacity: 0.9; font-weight: 600; }
+        /* Section Layout */
+        .section-title { font-size: 1.8rem; color: var(--primary); font-weight: 900; margin: 40px 0 20px; padding-bottom: 10px; border-bottom: 2px solid var(--border); display: flex; align-items: center; gap: 10px; }
 
-        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        /* Concept Maps */
+        .concept-map { background: white; padding: 30px; border-radius: 12px; border: 1px solid var(--border); box-shadow: var(--shadow); margin-bottom: 30px; text-align: center; overflow-x: auto; }
+        .cmap-title { font-size: 1.3rem; font-weight: 800; color: var(--secondary); margin-bottom: 20px; }
+        .cmap-tree { display: flex; flex-direction: column; align-items: center; gap: 15px; min-width: 600px; }
+        .cmap-node { background: var(--secondary); color: white; padding: 12px 25px; border-radius: 8px; font-weight: bold; position: relative; border: 2px solid var(--primary); }
+        .cmap-node.alt { background: #ebf8ff; color: var(--primary); border-color: var(--accent); }
+        .cmap-row { display: flex; justify-content: center; gap: 40px; width: 100%; }
+        .cmap-arrow { font-size: 1.5rem; color: var(--muted-text); }
 
-        .card {
-            background: var(--card-bg); border-radius: 24px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05); margin-bottom: 50px; overflow: hidden;
-            border: 1px solid var(--border-color);
-        }
+        /* Cards & Grids */
+        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; margin-bottom: 40px; }
+        .card { background: var(--card-bg); border-radius: 12px; border: 1px solid var(--border); padding: 25px; box-shadow: var(--shadow); transition: 0.3s ease; }
+        .card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+        .card-header { font-size: 1.4rem; font-weight: 800; color: var(--secondary); margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px dashed var(--border); }
+        .card-content { font-size: 1.1rem; color: var(--muted-text); }
+        .card-content strong { color: var(--primary); }
+        .card-content ul { padding-right: 20px; margin-top: 10px; }
+        .card-content li { margin-bottom: 8px; }
 
-        .card-header { padding: 25px 35px; border-bottom: 1px solid var(--border-color); background: #f8fafc; display: flex; align-items: center; gap: 20px; }
-        .section-num { background: var(--primary); color: white; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; font-weight: 900; border-radius: 14px; box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3); }
-        .card-header h2 { font-size: 1.7rem; font-weight: 900; color: var(--text-main); }
+        /* Tables */
+        .data-table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 1.05rem; background: white; box-shadow: var(--shadow); border-radius: 8px; overflow: hidden; }
+        .data-table th { background: var(--primary); color: white; padding: 15px; text-align: right; border: 1px solid var(--border); }
+        .data-table td { padding: 15px; border: 1px solid var(--border); font-weight: 600; color: var(--main-text); }
+        .data-table tr:nth-child(even) td { background: #f8fafc; }
 
-        .canvas-container { width: 100%; height: 320px; background: #f1f5f9; border-bottom: 1px solid var(--border-color); }
-        canvas { width: 100%; height: 100%; display: block; }
+        /* Callouts */
+        .alert-box { background: #fff5f5; border-right: 4px solid var(--danger); padding: 15px; border-radius: 8px; margin: 15px 0; font-weight: 700; color: #c53030; }
 
-        .card-body { padding: 35px; }
-        .card-body p { font-size: 1.2rem; margin-bottom: 20px; color: var(--text-muted); font-weight: 600; }
-        .card-body strong { color: var(--primary); font-weight: 800; }
-
-        .summary-box { margin-top: 35px; background: #f1f5f9; border-radius: 16px; border: 2px solid #e2e8f0; overflow: hidden; }
-        .summary-title { background: #e2e8f0; padding: 15px 25px; font-size: 1.2rem; font-weight: 900; color: var(--text-main); display: flex; align-items: center; gap: 10px; }
-        .summary-content { padding: 25px; }
-
-        .qa-item { margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px dashed #cbd5e1; }
-        .qa-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
-        .qa-q { font-size: 1.15rem; font-weight: 800; color: var(--text-main); margin-bottom: 6px; }
-        .qa-q span { color: var(--danger); }
-        .qa-a { font-size: 1.1rem; font-weight: 700; color: var(--text-muted); }
-        .qa-a span { color: var(--success); }
-
-        /* أزرار الجداول المنبثقة */
-        .btn-show-table {
-            display: flex; align-items: center; justify-content: center; gap: 10px;
-            width: 100%; padding: 15px; background: var(--primary); color: white;
-            border: none; border-radius: 12px; font-size: 1.2rem; font-weight: 800;
-            cursor: pointer; transition: 0.2s; font-family: inherit; margin-top: 15px;
-        }
-        .btn-show-table:hover { background: var(--primary-hover); transform: translateY(-2px); }
-
-        /* Modal الجداول العريض */
-        .table-overlay {
-            position: fixed; inset: 0; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px);
-            display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none;
-            transition: 0.3s; z-index: 3000; padding: 20px;
-        }
-        .table-overlay.active { opacity: 1; pointer-events: auto; }
-        .table-modal {
-            background: white; border-radius: 20px; width: 100%; max-width: 800px;
-            max-height: 90vh; overflow-y: auto; display: flex; flex-direction: column;
-            transform: scale(0.95); transition: 0.3s; box-shadow: 0 25px 50px rgba(0,0,0,0.3);
-        }
-        .table-overlay.active .table-modal { transform: scale(1); }
-        .table-header {
-            padding: 20px; background: var(--primary); color: white; font-size: 1.4rem;
-            font-weight: 900; display: flex; justify-content: space-between; align-items: center;
-            position: sticky; top: 0; z-index: 10;
-        }
-        .btn-close-table {
-            background: rgba(255,255,255,0.2); color: white; border: none; padding: 8px 15px;
-            border-radius: 8px; font-weight: bold; cursor: pointer; font-family: inherit;
-        }
-        .btn-close-table:hover { background: rgba(255,255,255,0.3); }
-        .table-content-wrapper { padding: 20px; overflow-x: auto; }
-        
-        .compare-table { width: 100%; border-collapse: collapse; min-width: 500px; }
-        .compare-table th { background: #f8fafc; color: var(--primary); padding: 15px; text-align: right; font-size: 1.15rem; border-bottom: 2px solid var(--primary); }
-        .compare-table td { padding: 15px; border-bottom: 1px solid var(--border-color); font-size: 1.1rem; font-weight: 600; color: var(--text-muted); }
-        .compare-table tr:last-child td { border-bottom: none; }
-        .compare-table td strong { color: var(--text-main); }
-
-        /* قسم الاختبار الطويل (40 سؤال) */
-        .quiz-section { margin-top: 80px; }
-        .quiz-header { text-align: center; margin-bottom: 40px; }
-        .quiz-header h2 { font-size: 2.5rem; font-weight: 900; color: var(--text-main); margin-bottom: 10px; }
-        .quiz-header p { font-size: 1.1rem; font-weight: bold; color: var(--warning); background: #fffbeb; display: inline-block; padding: 8px 20px; border-radius: 50px; border: 1px solid #fde68a; }
-        
-        .q-card { background: white; border: 2px solid var(--border-color); border-radius: 20px; padding: 30px; margin-bottom: 25px; transition: all 0.3s; }
-        .q-text { font-size: 1.3rem; font-weight: 900; margin-bottom: 20px; color: var(--text-main); line-height: 1.6; }
-        .mcq-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; }
-        .mcq-label { display: flex; align-items: center; padding: 18px; border: 2px solid var(--border-color); border-radius: 14px; cursor: pointer; font-weight: 800; font-size: 1.1rem; background: #f8fafc; transition: 0.2s; }
-        .mcq-label:hover { border-color: #cbd5e1; background: #f1f5f9; }
-        .mcq-label input { margin-left: 15px; transform: scale(1.4); accent-color: var(--primary); }
-        .fill-input { width: 100%; max-width: 400px; padding: 15px 20px; border: 2px solid var(--border-color); border-radius: 12px; font-family: inherit; font-size: 1.2rem; font-weight: 800; outline: none; background: #f8fafc; }
-        .fill-input:focus { border-color: var(--primary); background: white; }
-
-        .q-card.correct { border-color: #10b981; background: #f0fdf4; }
-        .q-card.wrong { border-color: #ef4444; background: #fef2f2; }
-        .mcq-label.is-correct { background: #d1fae5; border-color: #10b981; color: #065f46; }
-        .mcq-label.is-wrong { background: #fee2e2; border-color: #ef4444; color: #991b1b; }
-        .fill-input.is-correct { border-color: #10b981; color: #065f46; background: #d1fae5; }
-        .fill-input.is-wrong { border-color: #ef4444; color: #991b1b; background: #fee2e2; }
-        .correct-hint { display: none; margin-top: 15px; background: #d1fae5; color: #065f46; padding: 12px; border-radius: 10px; font-weight: 900; font-size: 1.1rem; border: 1px solid #10b981; }
-
-        .btn-submit { display: block; width: 100%; max-width: 450px; margin: 50px auto; padding: 22px; background: var(--danger); color: white; border: none; border-radius: 16px; font-size: 1.6rem; font-weight: 900; cursor: pointer; box-shadow: 0 10px 25px rgba(239, 68, 68, 0.3); transition: 0.3s; font-family: inherit; }
-        .btn-submit:hover { transform: translateY(-5px); background: #dc2626; }
-
-        /* Modal النتيجة */
-        .modal-overlay { position: fixed; inset: 0; background: rgba(15, 23, 42, 0.85); display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: 0.3s; z-index: 4000; padding: 20px; backdrop-filter: blur(8px); }
-        .modal-overlay.active { opacity: 1; pointer-events: auto; }
-        .modal-content { background: white; border-radius: 24px; padding: 50px; text-align: center; max-width: 500px; width: 100%; transform: scale(0.9); transition: 0.4s; }
-        .modal-overlay.active .modal-content { transform: scale(1); }
-        .modal-score { font-size: 5.5rem; font-weight: 900; color: var(--text-main); margin-bottom: 10px; line-height: 1; }
-        .modal-feedback { font-size: 1.3rem; font-weight: 700; color: var(--text-muted); margin-bottom: 30px; }
+        /* Q&A Bank */
+        .q-bank-header { background: var(--primary); color: white; padding: 20px; border-radius: 12px; text-align: center; margin: 50px 0 30px; box-shadow: var(--shadow); }
+        .q-bank-header h2 { font-size: 2rem; font-weight: 900; }
+        .qa-grid { display: grid; grid-template-columns: 1fr; gap: 15px; }
+        .qa-item { background: white; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+        .qa-question { width: 100%; text-align: right; padding: 18px 20px; background: #f8fafc; border: none; font-size: 1.15rem; font-weight: 800; color: var(--primary); cursor: pointer; transition: 0.3s; display: flex; justify-content: space-between; align-items: center; font-family: inherit; }
+        .qa-question:hover { background: #edf2f7; color: var(--secondary); }
+        .qa-question::after { content: '▼'; font-size: 0.9rem; color: var(--secondary); transition: transform 0.3s; }
+        .qa-item.active .qa-question::after { transform: rotate(180deg); }
+        .qa-answer { max-height: 0; overflow: hidden; padding: 0 20px; font-size: 1.1rem; color: var(--muted-text); font-weight: 600; line-height: 1.7; transition: max-height 0.3s ease, padding 0.3s ease; background: white; }
+        .qa-item.active .qa-answer { padding: 20px; max-height: 800px; border-top: 1px dashed var(--border); }
+        .q-num { background: var(--secondary); color: white; padding: 2px 8px; border-radius: 6px; font-size: 0.9rem; margin-left: 10px; }
+        .category-label { background: #edf2f7; color: var(--primary); padding: 10px 20px; font-weight: bold; font-size: 1.2rem; margin: 20px 0 10px; border-radius: 8px; border-right: 4px solid var(--accent); }
 
         /* AI Chat */
-        .chat-widget-btn { position: fixed; bottom: 30px; left: 30px; width: 70px; height: 70px; background: var(--text-main); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; cursor: pointer; box-shadow: 0 10px 30px rgba(0,0,0,0.4); z-index: 1000; transition: 0.3s; }
-        .chat-widget-btn:hover { transform: scale(1.1); background: var(--primary); }
-        .chat-window { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -40%); width: 92%; max-width: 450px; height: 80vh; background: white; border-radius: 24px; box-shadow: 0 30px 60px rgba(0,0,0,0.3); display: flex; flex-direction: column; z-index: 1001; opacity: 0; pointer-events: none; transition: 0.4s; overflow: hidden; }
-        .chat-window.active { transform: translate(-50%, -50%); opacity: 1; pointer-events: auto; }
-        .chat-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1000; opacity: 0; pointer-events: none; transition: 0.3s; }
-        .chat-overlay.active { opacity: 1; pointer-events: auto; }
-        .chat-header { background: var(--text-main); color: white; padding: 20px 25px; font-weight: 900; font-size: 1.2rem; display: flex; justify-content: space-between; align-items: center; }
-        .close-chat { cursor: pointer; font-size: 1.5rem; }
-        .chat-messages { flex: 1; padding: 25px; overflow-y: auto; display: flex; flex-direction: column; gap: 15px; }
-        .message { max-width: 85%; padding: 15px 20px; border-radius: 16px; font-size: 1.1rem; font-weight: 600; line-height: 1.6; }
-        .message.ai { background: #f1f5f9; align-self: flex-start; border-bottom-right-radius: 4px; color: var(--text-main); }
-        .message.user { background: var(--primary); color: white; align-self: flex-end; border-bottom-left-radius: 4px; }
-        .chat-input-area { padding: 20px; border-top: 1px solid var(--border-color); display: flex; gap: 12px; background: white; }
-        .chat-input-area input { flex: 1; padding: 15px 20px; border: 2px solid var(--border-color); border-radius: 50px; font-family: inherit; font-size: 1.1rem; outline: none; font-weight: bold; }
-        .chat-input-area input:focus { border-color: var(--primary); }
-        .chat-input-area button { background: var(--primary); color: white; border: none; width: 55px; height: 55px; border-radius: 50%; cursor: pointer; font-size: 1.4rem; display: flex; align-items: center; justify-content: center; }
-
-        @media (max-width: 768px) {
-            .header h1 { font-size: 2.2rem; }
-            .card-body { padding: 25px 20px; }
-            .summary-content { padding: 15px; }
-        }
+        .chat-btn { position: fixed; bottom: 30px; left: 30px; width: 60px; height: 60px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; cursor: pointer; box-shadow: var(--shadow-hover); z-index: 1000; border: 2px solid white; transition: 0.3s; }
+        .chat-btn:hover { transform: scale(1.1); background: var(--secondary); }
+        .chat-window { position: fixed; bottom: 100px; left: 30px; width: 360px; max-width: 90vw; height: 480px; background: white; border-radius: 16px; box-shadow: var(--shadow-hover); display: flex; flex-direction: column; z-index: 1001; opacity: 0; pointer-events: none; transform: translateY(20px); transition: 0.3s; border: 1px solid var(--border); overflow: hidden; }
+        .chat-window.active { opacity: 1; pointer-events: auto; transform: translateY(0); }
+        .chat-header { background: var(--primary); color: white; padding: 15px 20px; font-weight: 800; display: flex; justify-content: space-between; align-items: center; }
+        .close-chat { cursor: pointer; font-size: 1.2rem; }
+        .chat-body { flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; background: #f8fafc; }
+        .msg { max-width: 85%; padding: 10px 15px; border-radius: 10px; font-size: 1rem; font-weight: 600; line-height: 1.5; }
+        .msg.ai { background: white; border: 1px solid var(--border); color: var(--main-text); align-self: flex-start; border-bottom-right-radius: 4px; }
+        .msg.user { background: var(--secondary); color: white; align-self: flex-end; border-bottom-left-radius: 4px; }
+        .chat-footer { padding: 15px; background: white; border-top: 1px solid var(--border); display: flex; gap: 10px; }
+        .chat-footer input { flex: 1; padding: 10px 15px; border: 1px solid var(--border); border-radius: 8px; font-family: inherit; outline: none; font-weight: 600; }
+        .chat-footer button { background: var(--secondary); color: white; border: none; padding: 0 15px; border-radius: 8px; cursor: pointer; font-weight: bold; }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>التكاثر والتمايز الجنسي</h1>
-        <p>التفريغ الشامل للوح (الأساس الجيني والتشريحي)</p>
+    <div class="hero">
+        <h1>المرجع الأكاديمي: جهاز التكاثر وتشكل النطاف</h1>
+        <p>شرح شامل، جداول مقارنة، مخططات مفاهيمية، وبنك أسئلة متكامل للدرس</p>
     </div>
 
     <div class="container">
+
+        <!-- القسم الأول: الأساس الجيني -->
+        <h2 class="section-title">■ أولاً: الأساس الجيني والتمايز الجنيني</h2>
         
-        <!-- القسم 1 -->
-        <div class="card">
-            <div class="card-header"><div class="section-num">1</div><h2>الأساس الجيني وتحديد الجنس</h2></div>
-            <div class="canvas-container"><canvas id="canvas-genetics"></canvas></div>
-            <div class="card-body">
-                <p>يحتوي الإنسان على <strong>46 صبغياً</strong> (44 جسمي + 2 جنسي).</p>
-                <p>يتميز الذكر بوجود الصبغي Y الذي يحمل <strong>المورثة SRY</strong>، وهي المورثة المسؤولة عن بدء التمايز الذكري وتشكيل الخصية.</p>
-                
-                <div class="summary-box">
-                    <div class="summary-title">📍 أسئلة المواقع والوظائف</div>
-                    <div class="summary-content">
-                        <div class="qa-item">
-                            <div class="qa-q"><span>س:</span> ما هو موقع مورثة SRY؟</div>
-                            <div class="qa-a"><span>ج:</span> تقع على الصبغي الجنسي (Y).</div>
-                        </div>
-                        <div class="qa-item">
-                            <div class="qa-q"><span>س:</span> ما هي وظيفة مورثة SRY؟</div>
-                            <div class="qa-a"><span>ج:</span> تشرف على صنع بروتين خاص يتدخل في تحول بداءة المناسل إلى خصية.</div>
+        <div class="concept-map">
+            <div class="cmap-title">مخطط مفاهيمي: تمايز بداءة المناسل (الأسبوع السابع)</div>
+            <div class="cmap-tree">
+                <div class="cmap-node">بداءة المناسل (من الوريقة الوسطى فقط)</div>
+                <div class="cmap-arrow">↓</div>
+                <div class="cmap-row">
+                    <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+                        <div class="cmap-node alt" style="border-color: var(--success); color: var(--success);">بوجود مورثة SRY (ذكر XY)</div>
+                        <div class="cmap-arrow">↓</div>
+                        <div class="cmap-node">تتشكل الخصية</div>
+                        <div class="cmap-row" style="gap:10px;">
+                            <div class="cmap-node alt" style="font-size:0.9rem;">إفراز هرمون التستوسترون<br>↓<br>نمو أنبوبا وولف لأقنية ذكرية</div>
+                            <div class="cmap-node alt" style="font-size:0.9rem;">إفراز هرمون AMH<br>↓<br>ضمور أنبوبي مولر</div>
                         </div>
                     </div>
-                </div>
-
-                <button class="btn-show-table" onclick="openTableModal('table1', '💡 مقارنة: الصيغة الصبغية والأعراس')">
-                    📊 عرض جدول مقارنة الذكر والأنثى
-                </button>
-            </div>
-        </div>
-
-        <!-- القسم 2 -->
-        <div class="card">
-            <div class="card-header"><div class="section-num">2</div><h2>التمايز الجنيني للمناسل</h2></div>
-            <div class="canvas-container"><canvas id="canvas-diff"></canvas></div>
-            <div class="card-body">
-                <p>يبدأ تشكل الجهاز التناسلي في <strong>الأسبوع (7)</strong> من الحمل. وتنشأ بداءة المناسل من <strong>الوريقة الوسطى فقط</strong>. مسار التطور يحدده وجود أو غياب مورثة SRY.</p>
-                
-                <div class="summary-box">
-                    <div class="summary-title">📍 أسئلة المواقع والوظائف</div>
-                    <div class="summary-content">
-                        <div class="qa-item">
-                            <div class="qa-q"><span>س:</span> ما هو منشأ بداءة المناسل؟</div>
-                            <div class="qa-a"><span>ج:</span> تنشأ من <strong>الوريقة الجنينية الوسطى فقط</strong>.</div>
-                        </div>
-                        <div class="qa-item">
-                            <div class="qa-q"><span>س:</span> ما وظيفة هرمون التستوسترون المفرز جنينياً؟</div>
-                            <div class="qa-a"><span>ج:</span> يؤدي إلى نمو أنبوبا وولف لأقنية تناسلية ذكرية.</div>
-                        </div>
-                        <div class="qa-item">
-                            <div class="qa-q"><span>س:</span> ما وظيفة هرمون AMH؟</div>
-                            <div class="qa-a"><span>ج:</span> يؤدي إلى ضمور أنبوبي مولر عند الذكر.</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <button class="btn-show-table" onclick="openTableModal('table2', '💡 مقارنة: تأثير الهرمونات وتمايز المناسل')">
-                    📊 عرض جدول تمايز المناسل
-                </button>
-            </div>
-        </div>
-
-        <!-- القسم 3 -->
-        <div class="card">
-            <div class="card-header"><div class="section-num">3</div><h2>هجرة الخصيتين والتنظيم الحراري</h2></div>
-            <div class="canvas-container"><canvas id="canvas-descent"></canvas></div>
-            <div class="card-body">
-                <p>تهاجر الخصيتان من البطن إلى كيس الصفن للحصول على بيئة أبرد بـدرجتين مئويتين من حرارة الجسم، أي عند <strong>35°C</strong>، وهي الحرارة المثلى لإنتاج النطاف.</p>
-                
-                <div class="summary-box">
-                    <div class="summary-title">📍 أسئلة المواقع والتشريح</div>
-                    <div class="summary-content">
-                        <div class="qa-item">
-                            <div class="qa-q"><span>س:</span> أين تتشكل الخصيتان وأين تهاجران؟</div>
-                            <div class="qa-a"><span>ج:</span> تتشكلان في المرحلة الجنينية <strong>داخل تجويف البطن</strong>، وتهاجران قبل الولادة <strong>إلى كيس الصفن</strong>.</div>
-                        </div>
-                        <div class="qa-item">
-                            <div class="qa-q"><span>س:</span> ما هو موقع واسم ممر الهجرة؟</div>
-                            <div class="qa-a"><span>ج:</span> عبر <strong>القناة الإربية</strong>، وهي تقع في البنية العضلية البطنية.</div>
-                        </div>
-                        <div class="qa-item">
-                            <div class="qa-q"><span>س:</span> هل توجد حيوانات لا تهاجر خصاها؟</div>
-                            <div class="qa-a"><span>ج:</span> نعم، (الفيل والحوت).</div>
+                    <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+                        <div class="cmap-node alt" style="border-color: var(--danger); color: var(--danger);">بغياب مورثة SRY (أنثى XX)</div>
+                        <div class="cmap-arrow">↓</div>
+                        <div class="cmap-node">يتشكل المبيض</div>
+                        <div class="cmap-row" style="gap:10px;">
+                            <div class="cmap-node alt" style="font-size:0.9rem;">غياب التستوسترون<br>↓<br>ضمور أنبوبي وولف</div>
+                            <div class="cmap-node alt" style="font-size:0.9rem;">غياب AMH<br>↓<br>نمو أنبوبا مولر لأقنية أنثوية</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- القسم 4 -->
-        <div class="card">
-            <div class="card-header"><div class="section-num">4</div><h2>البنية الداخلية للخصية</h2></div>
-            <div class="canvas-container"><canvas id="canvas-struct"></canvas></div>
-            <div class="card-body">
-                <p>تحتوي كل خصية على حوالي <strong>250 فصاً</strong>. كما تساهم عضلات كيس الصفن في التنظيم الحراري بالتقلص (بالبرد) والاسترخاء (بالحرارة).</p>
-                
-                <div class="summary-box">
-                    <div class="summary-title">📍 أسئلة المواقع والوظائف</div>
-                    <div class="summary-content">
-                        <div class="qa-item">
-                            <div class="qa-q"><span>س:</span> ما هو موقع الأنابيب المنوية ووظيفتها؟</div>
-                            <div class="qa-a"><span>ج:</span> <strong>الموقع:</strong> داخل فصوص الخصية. <strong>الوظيفة:</strong> إنتاج النطاف.</div>
-                        </div>
-                        <div class="qa-item">
-                            <div class="qa-q"><span>س:</span> ما هو موقع خلايا ليديغ (البينية) ووظيفتها؟</div>
-                            <div class="qa-a"><span>ج:</span> <strong>الموقع:</strong> بين الأنابيب المنوية. <strong>الوظيفة:</strong> تفرز الأندروجينات (التستوسترون).</div>
-                        </div>
-                        <div class="qa-item">
-                            <div class="qa-q"><span>س:</span> أين تقع شبكة هالر؟</div>
-                            <div class="qa-a"><span>ج:</span> ضمن البنية الداخلية للخصية.</div>
-                        </div>
+        <table class="data-table">
+            <tr>
+                <th width="30%">وجه المقارنة</th>
+                <th width="35%">الذكر (الصيغة: 2n = 44A + XY)</th>
+                <th width="35%">الأنثى (الصيغة: 2n = 44A + XX)</th>
+            </tr>
+            <tr>
+                <td><strong>أنواع الأعراس المنتجة</strong></td>
+                <td>نوعان: (22A + X) و (22A + Y)</td>
+                <td>نوع واحد فقط: (22A + X)</td>
+            </tr>
+            <tr>
+                <td><strong>مورثة SRY</strong></td>
+                <td>موجودة (على الصبغي الجنسي Y)</td>
+                <td>غائبة</td>
+            </tr>
+        </table>
+
+        <!-- القسم الثاني: بنية الخصية وهجرتها -->
+        <h2 class="section-title">■ ثانياً: هجرة الخصيتين وبنيتهما الداخلية</h2>
+        <div class="grid-layout">
+            <div class="card">
+                <div class="card-header">هجرة الخصيتين والتنظيم الحراري</div>
+                <div class="card-content">
+                    <p>تتشكل الخصيتان في المرحلة الجنينية <strong>داخل تجويف البطن</strong>، وتهاجران قبل الولادة <strong>خارج الجسم إلى كيس الصفن</strong> عبر <strong>القناة الإربية</strong>.</p>
+                    <ul>
+                        <li><strong>السبب:</strong> لأن درجة الحرارة المثلى لإنتاج النطاف هي <strong>35°C</strong> (أقل من حرارة الجسم).</li>
+                        <li><strong>عضلات كيس الصفن:</strong> تتقلص في البرد لتقريب الخصيتين للتدفئة، وتسترخي في الحر لتبعيدهما.</li>
+                    </ul>
+                    <div class="alert-box">
+                        - مرور الحبل المنوي بالقناة الإربية يسبب نقطة ضعف قد تؤدي لـ <strong>الفتق الإربي</strong>.<br>
+                        - الفيل والحوت تبقى خصاهما في البطن ولا تهاجر.<br>
+                        - <strong>دوالي الخصية:</strong> حالة مرضية في أوردة كيس الصفن.
                     </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">البنية الداخلية للخصية</div>
+                <div class="card-content">
+                    <p>تحاط بـ غلاف الخصية، وتحوي شبكة الخصية (هالر)، وتتألف من <strong>250 فصاً</strong>.</p>
+                    <table class="data-table" style="margin-top: 10px; font-size: 0.95rem;">
+                        <tr><th>البنية</th><th>الموقع</th><th>الوظيفة</th></tr>
+                        <tr><td><strong>الأنابيب المنوية</strong></td><td>داخل فصوص الخصية</td><td>إنتاج النطاف</td></tr>
+                        <tr><td><strong>خلايا بينية (ليديغ)</strong></td><td>بين الأنابيب المنوية</td><td>تفرز الهرمونات الذكرية (الأندروجينات)</td></tr>
+                    </table>
                 </div>
             </div>
         </div>
 
-        <!-- القسم 5 -->
-        <div class="card">
-            <div class="card-header"><div class="section-num">5</div><h2>الأقنية الناقلة للنطاف</h2></div>
-            <div class="canvas-container"><canvas id="canvas-ducts"></canvas></div>
-            <div class="card-body">
-                <p>تتألف الأقنية من البربخ، الأسهرين، والإحليل، وهي مسؤولة عن النقل والتخزين وإكساب النطاف الحركة.</p>
-                
-                <button class="btn-show-table" onclick="openTableModal('table5', '💡 مقارنة: الأقنية الناقلة للنطاف')">
-                    📊 عرض جدول الأقنية وأطوالها
-                </button>
+        <!-- القسم الثالث: الأقنية والغدد -->
+        <h2 class="section-title">■ ثالثاً: الأقنية الناقلة والغدد الملحقة</h2>
+        
+        <table class="data-table">
+            <tr>
+                <th width="20%">الغدة الملحقة</th>
+                <th width="30%">الموقع</th>
+                <th width="50%">المفرزات والوظيفة</th>
+            </tr>
+            <tr>
+                <td><strong>الحويصلان المنويان</strong></td>
+                <td>خلف قاعدة المثانة</td>
+                <td>- تشكل 60% من السائل المنوي.<br>- <strong>الفركتوز:</strong> لتغذية النطاف.<br>- <strong>البروستاغلاندينات:</strong> تحث على تقلص العضلات الملساء في المجرى التناسلي.</td>
+            </tr>
+            <tr>
+                <td><strong>البروستات (الموثة)</strong></td>
+                <td>تحيط بالجزء الأول من الإحليل</td>
+                <td>- سائل حليبي حمضي (20-30%).<br>- <strong>شوارد الكالسيوم Ca++:</strong> تخفف لزوجة السائل وتنشط النطاف.<br>- <strong>البلاسمين المنوي:</strong> بروتين مضاد للجراثيم يمنع التهابات المجرى التناسلي البولي.</td>
+            </tr>
+            <tr>
+                <td><strong>غدتا كوبر</strong></td>
+                <td>قرب قاعدة القضيب الذكري</td>
+                <td>- مادة <strong>مخاطية قلوية</strong>.<br>- تخفف حموضة البول في الإحليل، وتخفف حموضة المهبل أثناء الاقتران.</td>
+            </tr>
+        </table>
+
+        <!-- القسم الرابع: تشكل النطاف -->
+        <h2 class="section-title">■ رابعاً: تشكل النطاف والتمايز (Spermatogenesis)</h2>
+        
+        <div class="concept-map">
+            <div class="cmap-title">مخطط مراحل تشكل النطاف (64 يوماً)</div>
+            <div class="cmap-tree" style="flex-direction: row; flex-wrap: wrap; justify-content: center;">
+                <div class="cmap-node">1. خلايا ظهارة منشئة (2n)<br><span style="font-size:0.8rem; font-weight:normal;">انقسامات خيطية</span></div>
+                <div class="cmap-arrow">←</div>
+                <div class="cmap-node">2. منسلية منوية (2n)<br><span style="font-size:0.8rem; font-weight:normal;">تنمو وتكبر</span></div>
+                <div class="cmap-arrow">←</div>
+                <div class="cmap-node">3. خلية منوية أولية (2n)<br><span style="font-size:0.8rem; font-weight:normal;">انقسام منصف أول</span></div>
+                <div class="cmap-arrow">←</div>
+                <div class="cmap-node">4. خلية منوية ثانوية (1n)<br><span style="font-size:0.8rem; font-weight:normal;">انقسام منصف ثاني</span></div>
+                <div class="cmap-arrow">←</div>
+                <div class="cmap-node">5. منوية (1n)<br><span style="font-size:0.8rem; font-weight:normal;">تتمايز شكلياً</span></div>
+                <div class="cmap-arrow">←</div>
+                <div class="cmap-node alt" style="border-color: var(--success);">6. نطفة (1n)</div>
             </div>
         </div>
 
-        <!-- القسم 6 -->
-        <div class="card">
-            <div class="card-header"><div class="section-num">6</div><h2>الغدد الملحقة</h2></div>
-            <div class="canvas-container"><canvas id="canvas-glands"></canvas></div>
-            <div class="card-body">
-                <p>تضم الغدد الملحقة ثلاثة أنواع: الحويصلان المنويان، الموثة (البروستات)، وغدتا كوبر. تفرز هذه الغدد سوائل مغذية.</p>
-                
-                <div class="summary-box">
-                    <div class="summary-title">📍 أسئلة الوظائف الدقيقة</div>
-                    <div class="summary-content">
-                        <div class="qa-item">
-                            <div class="qa-q"><span>س:</span> متى وأين تكتسب النطاف القدرة على الحركة الذاتية تحديداً؟</div>
-                            <div class="qa-a"><span>ج:</span> تكتسب النطاف قدرتها على الحركة <strong>عند اختلاطها مع مفرزات الحويصلين المنويين</strong> داخل مستودع <strong>البربخ</strong>.</div>
-                        </div>
-                    </div>
+        <div class="grid-layout">
+            <div class="card">
+                <div class="card-header">آلية تمايز المنوية إلى نطفة</div>
+                <div class="card-content">
+                    <ul>
+                        <li><strong>جهاز غولجي:</strong> يتحول إلى <strong>جسيم طرفي</strong> يتوضع في مقدمة رأس النطفة.</li>
+                        <li><strong>الجسيمات الكوندرية:</strong> تتجمع حول بداية السوط في <strong>القطعة المتوسطة</strong> لتوليد الطاقة.</li>
+                        <li><strong>المريكز البعيد:</strong> تنشأ منه الأنيبيبات الدقيقة التي تشكل السوط (الذيل).</li>
+                        <li><strong>الهيولى:</strong> تفقد المنوية معظم هيولاها لتسهيل حركتها.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">خلايا سرتولي والسائل المنوي</div>
+                <div class="card-content">
+                    <p><strong>خلايا سرتولي:</strong> خلايا حاضنة متطاولة كعمود سيتوبلاسمي في جدار الأنبوب المنوي.</p>
+                    <ol>
+                        <li>مصدر غذائي للمنويات المتمايزة.</li>
+                        <li>تبلعم الهيولى المفقودة أثناء التمايز.</li>
+                        <li>تسهم بتشكيل <strong>الحاجز الدموي الخصيوي</strong>: يمنع خلايا المناعة من مهاجمة النطاف (لأن غشاء النطفة له مولدات ضد خاصة).</li>
+                    </ol>
+                    <hr style="margin: 10px 0; border:0; border-top: 1px dashed var(--border);">
+                    <p><strong>السائل المنوي:</strong> عدد النطاف الطبيعي 20-100 مليون/مل (تشكل 10% من الحجم). يُعد الذكر <strong>عقيماً عقم فيزيولوجي</strong> إذا قل العدد عن 20 مليون نطفة/مل.</p>
                 </div>
             </div>
         </div>
 
-        <!-- الاختبار الشامل 40 سؤال -->
-        <div class="quiz-section">
-            <div class="quiz-header">
-                <h2>الاختبار الشامل (40 سؤال)</h2>
-                <p>نظام التصحيح الذكي مُفعل (يتجاهل الأقواس، التشكيل، والهمزات تلقائياً)</p>
-            </div>
-            <form id="quiz-form"></form>
-            <button class="btn-submit" id="btn-submit">تأكيد وتصحيح الإجابات</button>
+        <!-- بنك الأسئلة الشامل 100 سؤال -->
+        <div class="q-bank-header">
+            <h2>بنك الأسئلة الشامل للدرس</h2>
+            <p>100 سؤال متكامل يشمل المقارنات، الترتيب، والتعاليل والوظائف</p>
         </div>
+
+        <div class="qa-grid" id="qa-container">
+            <!-- Questions will be injected here by JS -->
+        </div>
+
     </div>
 
-    <!-- حاويات الجداول المخفية -->
-    <div style="display: none;">
-        <div id="table1">
-            <table class="compare-table">
-                <tr><th>وجه المقارنة</th><th>الذكر (صبي)</th><th>الأنثى (بنت)</th></tr>
-                <tr><td><strong>الصيغة الصبغية الجسدية</strong></td><td>2n = 44A + XY</td><td>2n = 44A + XX</td></tr>
-                <tr><td><strong>أنواع الأعراس (النطاف/البيوض)</strong></td><td>نوعان: (22A + X) أو (22A + Y)</td><td>نوع واحد: (22A + X) فقط</td></tr>
-            </table>
-        </div>
-        <div id="table2">
-            <table class="compare-table">
-                <tr><th>الحالة</th><th>المناسل الناتجة</th><th>تأثير الهرمونات على الأقنية</th></tr>
-                <tr><td><strong>بوجود مورثة SRY</strong></td><td>تتشكل <strong>الخصية</strong></td><td>- <strong>التستوسترون:</strong> ينمي أنبوبا وولف.<br>- <strong>AMH:</strong> يضمر أنبوبي مولر.</td></tr>
-                <tr><td><strong>بغياب مورثة SRY</strong></td><td>يتشكل <strong>المبيض</strong></td><td>- <strong>غياب التستوسترون:</strong> يضمر أنبوبا وولف.<br>- <strong>غياب AMH:</strong> ينمو أنبوبا مولر لأقنية أنثوية.</td></tr>
-            </table>
-        </div>
-        <div id="table5">
-            <table class="compare-table">
-                <tr><th>القناة</th><th>الطول/الموقع</th><th>الوظيفة الأساسية</th></tr>
-                <tr><td><strong>البربخ</strong></td><td>أنبوب رفيع ملتف (<strong>7 أمتار</strong>)</td><td>المستودع الرئيسي للنطاف، وفيه تكتسب الحركة.</td></tr>
-                <tr><td><strong>الأسهرين</strong></td><td>أنبوب عضلي (<strong>45 سم</strong>)</td><td>ينقل النطاف للإحليل، ويخزنها لمدة <strong>شهر</strong>.</td></tr>
-                <tr><td><strong>الإحليل</strong></td><td>قناة مشتركة، <strong>وسط القضيب</strong></td><td>قناة بولية تناسلية، تمرر سائل منوي يضاف للنطاف.</td></tr>
-            </table>
-        </div>
-    </div>
-
-    <!-- نافذة الجداول (Modal) -->
-    <div class="table-overlay" id="table-overlay" onclick="closeTableModal(event)">
-        <div class="table-modal" onclick="event.stopPropagation()">
-            <div class="table-header">
-                <span id="table-modal-title">جدول المقارنة</span>
-                <button class="btn-close-table" onclick="closeTableModal()">✖ إغلاق</button>
-            </div>
-            <div class="table-content-wrapper" id="table-modal-content"></div>
-        </div>
-    </div>
-
-    <!-- نافذة النتيجة -->
-    <div class="modal-overlay" id="results-modal">
-        <div class="modal-content">
-            <h3 style="font-size: 2rem; font-weight: 900; margin-bottom: 15px; color: var(--text-main);">النتيجة النهائية</h3>
-            <div class="modal-score" id="modal-score">0/40</div>
-            <div class="modal-feedback" id="modal-feedback"></div>
-            <button class="btn-close" style="background: var(--text-main); color: white; padding: 12px 30px; border-radius: 10px; font-weight: bold; border: none; cursor: pointer;" onclick="closeQuizModal()">مراجعة الأخطاء</button>
-        </div>
-    </div>
-
-    <!-- AI Chat -->
-    <div class="chat-overlay" id="chat-overlay" onclick="toggleChat()"></div>
-    <div class="chat-widget-btn" onclick="toggleChat()">💬</div>
+    <!-- AI Chat Widget -->
+    <div class="chat-btn" onclick="toggleChat()">💬</div>
     <div class="chat-window" id="chat-window">
-        <div class="chat-header">المساعد الذكي 🤖 <span class="close-chat" onclick="toggleChat()">✖</span></div>
-        <div class="chat-messages" id="chat-messages">
-            <div class="message ai">أهلاً! اسألني عن المواقع، الوظائف، أو الأرقام وسأجيبك من معلومات اللوح. 💡</div>
+        <div class="chat-header">المساعد الأكاديمي للعلوم <span class="close-chat" onclick="toggleChat()">✖</span></div>
+        <div class="chat-body" id="chat-messages">
+            <div class="msg ai">أهلاً بك! أنا مساعدك التعليمي. يمكنك سؤالي عن أي استفسار يخص درس جهاز التكاثر والتمايز الجنسي وسأجيبك فوراً.</div>
         </div>
-        <div class="chat-input-area">
-            <input type="text" id="chat-input" placeholder="اسأل هنا..." onkeypress="if(event.key==='Enter') sendMessage()">
-            <button onclick="sendMessage()">➤</button>
+        <div class="chat-footer">
+            <input type="text" id="chat-input" placeholder="اكتب سؤالك هنا..." onkeypress="if(event.key === 'Enter') sendMessage()">
+            <button onclick="sendMessage()">إرسال</button>
         </div>
     </div>
 
 <script>
-    /* =========================================================
-       1. Table Modals Logic
-       ========================================================= */
-    function openTableModal(tableId, title) {
-        document.getElementById('table-modal-title').innerText = title;
-        document.getElementById('table-modal-content').innerHTML = document.getElementById(tableId).innerHTML;
-        document.getElementById('table-overlay').classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-    function closeTableModal(e) {
-        if(e && e.target !== document.getElementById('table-overlay')) return;
-        document.getElementById('table-overlay').classList.remove('active');
-        document.body.style.overflow = '';
-    }
-
-    /* =========================================================
-       2. SMART TEXT NORMALIZER (مصحح الفراغات الذكي)
-       ========================================================= */
-    function normalizeText(text) {
-        if (!text) return "";
-        return text.trim().toLowerCase()
-            .replace(/[()[\]{}.,،؛؟!""'']/g, '') 
-            .replace(/[أإآا]/g, 'ا')
-            .replace(/[ةه]/g, 'ه')
-            .replace(/[ىي]/g, 'ي')
-            .replace(/[\u064B-\u065F]/g, '')
-            .replace(/١/g, '1').replace(/٢/g, '2').replace(/٣/g, '3')
-            .replace(/٤/g, '4').replace(/٥/g, '5').replace(/٦/g, '6')
-            .replace(/٧/g, '7').replace(/٨/g, '8').replace(/٩/g, '9').replace(/٠/g, '0')
-            .replace(/\s+/g, ' ').trim();
-    }
-
-    /* =========================================================
-       3. CANVAS ANIMATIONS (مع التسميات والخطوط الآمنة)
-       ========================================================= */
-    const fontSafe = "bold 16px system-ui, -apple-system, sans-serif";
-    const fontSmall = "bold 13px system-ui, -apple-system, sans-serif";
-
-    function setupCanvas(id) {
-        const canvas = document.getElementById(id); const ctx = canvas.getContext('2d');
-        const resize = () => { canvas.width = canvas.parentElement.clientWidth * window.devicePixelRatio; canvas.height = canvas.parentElement.clientHeight * window.devicePixelRatio; ctx.scale(window.devicePixelRatio, window.devicePixelRatio); };
-        window.addEventListener('resize', resize); resize();
-        return { canvas, ctx, getW: () => canvas.parentElement.clientWidth, getH: () => canvas.parentElement.clientHeight };
-    }
-
-    // 1. Genetics
-    const c1=setupCanvas('canvas-genetics'); let t1=0;
-    function d1() { const {ctx, getW, getH}=c1; ctx.clearRect(0,0,getW(),getH()); const cx=getW()/2, cy=getH()/2; let y=Math.sin(t1)*10; 
-        ctx.lineWidth=14; ctx.lineCap='round'; 
-        ctx.strokeStyle='#3b82f6'; ctx.beginPath(); ctx.moveTo(cx-60-20,cy-30+y); ctx.lineTo(cx-60+20,cy+40+y); ctx.stroke(); ctx.beginPath(); ctx.moveTo(cx-60+20,cy-30+y); ctx.lineTo(cx-60-20,cy+40+y); ctx.stroke(); 
-        ctx.font=fontSafe; ctx.fillStyle="#1e293b"; ctx.fillText("الصبغي X", cx-90, cy+80+y);
-        ctx.strokeStyle='#64748b'; ctx.beginPath(); ctx.moveTo(cx+60,cy-30-y); ctx.lineTo(cx+60,cy+10-y); ctx.lineTo(cx+60,cy+40-y); ctx.stroke(); ctx.beginPath(); ctx.moveTo(cx+60+20,cy-30-y); ctx.lineTo(cx+60,cy-y); ctx.stroke(); 
-        ctx.strokeStyle='#ef4444'; ctx.lineWidth=6; ctx.beginPath(); ctx.moveTo(cx+60-10,cy-15-y); ctx.lineTo(cx+60+10,cy-15-y); ctx.stroke(); 
-        ctx.fillStyle="#ef4444"; ctx.fillText("مورثة SRY", cx+85, cy-10-y);
-        ctx.fillStyle="#1e293b"; ctx.fillText("الصبغي Y", cx+30, cy+80-y);
-        t1+=0.04; requestAnimationFrame(d1); } d1();
-
-    // 2. Diff
-    const c2=setupCanvas('canvas-diff'); let t2=0;
-    function d2() { const {ctx, getW, getH}=c2; ctx.clearRect(0,0,getW(),getH()); const cx=getW()/2, cy=getH()/2; 
-        ctx.fillStyle='#94a3b8'; ctx.beginPath(); ctx.arc(cx,cy-50,22,0,Math.PI*2); ctx.fill(); 
-        ctx.font=fontSafe; ctx.fillStyle="#1e293b"; ctx.textAlign="center"; ctx.fillText("بداءة المناسل (الوريقة الوسطى)", cx, cy-85);
-        ctx.strokeStyle='#cbd5e1'; ctx.lineWidth=3; ctx.beginPath(); ctx.moveTo(cx,cy-15); ctx.lineTo(cx,cy+20); ctx.stroke(); 
-        ctx.fillStyle='#3b82f6'; ctx.beginPath(); ctx.ellipse(cx,cy+50,30,18,0,0,Math.PI*2); ctx.fill(); 
-        ctx.fillStyle="#fff"; ctx.fillText("خصية", cx, cy+55);
-        let p=(Math.sin(t2*3)+1)/2; ctx.lineWidth=3;
-        ctx.strokeStyle=`rgba(239, 68, 68, ${p})`; ctx.beginPath(); ctx.moveTo(cx-40,cy+50); ctx.lineTo(cx-100,cy+50); ctx.stroke(); 
-        ctx.fillStyle="#ef4444"; ctx.font=fontSmall; ctx.fillText("AMH (ضمور مولر)", cx-120, cy+70);
-        ctx.strokeStyle=`rgba(16, 185, 129, ${p})`; ctx.beginPath(); ctx.moveTo(cx+40,cy+50); ctx.lineTo(cx+100,cy+50); ctx.stroke(); 
-        ctx.fillStyle="#10b981"; ctx.fillText("تستوسترون (نمو وولف)", cx+130, cy+70);
-        t2+=0.03; requestAnimationFrame(d2); } d2();
-
-    // 3. Descent
-    const c3=setupCanvas('canvas-descent'); let y3=0;
-    function d3() { const {ctx, getW, getH}=c3; ctx.clearRect(0,0,getW(),getH()); const cx=getW()/2; 
-        ctx.strokeStyle='#cbd5e1'; ctx.lineWidth=3; ctx.setLineDash([6,6]); ctx.beginPath(); ctx.ellipse(cx,60,70,35,0,0,Math.PI*2); ctx.stroke(); 
-        ctx.font=fontSafe; ctx.fillStyle="#64748b"; ctx.textAlign="center"; ctx.fillText("تجويف البطن", cx, 30);
-        ctx.setLineDash([]); ctx.beginPath(); ctx.moveTo(cx-40,100); ctx.lineTo(cx-40,190); ctx.stroke(); ctx.beginPath(); ctx.moveTo(cx+40,100); ctx.lineTo(cx+40,190); ctx.stroke(); 
-        ctx.fillText("القناة الإربية", cx+85, 145);
-        ctx.beginPath(); ctx.arc(cx,190,40,0,Math.PI); ctx.stroke(); ctx.fillText("كيس الصفن", cx+85, 230);
-        ctx.fillStyle='#ef4444'; ctx.beginPath(); ctx.ellipse(cx,60+y3,18,12,0,0,Math.PI*2); ctx.fill(); 
-        ctx.fillStyle="#fff"; ctx.font=fontSmall; ctx.fillText("خصية", cx, 64+y3);
-        y3+=1.2; if(y3>140) y3=0; requestAnimationFrame(d3); } d3();
-
-    // 4. Struct
-    const c4=setupCanvas('canvas-struct'); let t4=0;
-    function d4() { const {ctx, getW, getH}=c4; ctx.clearRect(0,0,getW(),getH()); const cx=getW()/2, cy=getH()/2+10; 
-        ctx.fillStyle='#fff'; ctx.beginPath(); ctx.ellipse(cx,cy,80,110,0,0,Math.PI*2); ctx.fill(); 
-        ctx.strokeStyle='#cbd5e1'; ctx.lineWidth=4; ctx.stroke(); 
-        ctx.font=fontSafe; ctx.fillStyle="#64748b"; ctx.textAlign="center"; ctx.fillText("غلاف الخصية (250 فص)", cx, cy-120);
-        ctx.strokeStyle='#e2e8f0'; ctx.lineWidth=2; for(let i=1; i<4; i++) { ctx.beginPath(); ctx.moveTo(cx-80,cy-10); ctx.quadraticCurveTo(cx,cy-100+(i*50),cx+80,cy-10); ctx.stroke(); } 
-        let p=Math.abs(Math.sin(t4))*4; ctx.fillStyle='#f59e0b'; 
-        [[cx-30,cy-40], [cx+20,cy-10], [cx-10,cy+40]].forEach(pt => { ctx.beginPath(); ctx.arc(pt[0],pt[1],5+p,0,Math.PI*2); ctx.fill(); }); 
-        ctx.fillStyle="#f59e0b"; ctx.font=fontSmall; ctx.fillText("خلايا ليديغ (بينية)", cx+80, cy);
-        t4+=0.04; requestAnimationFrame(d4); } d4();
-
-    // 5. Ducts
-    const c5=setupCanvas('canvas-ducts'); let t5=0;
-    function d5() { const {ctx, getW, getH}=c5; ctx.clearRect(0,0,getW(),getH()); const cx=getW()/2, cy=getH()/2; 
-        ctx.fillStyle='#fff'; ctx.beginPath(); ctx.arc(cx-60,cy+30,30,0,Math.PI*2); ctx.fill(); ctx.stroke(); 
-        ctx.strokeStyle='#ef4444'; ctx.lineWidth=5; ctx.beginPath(); for(let i=0; i<7; i++) { ctx.arc(cx-60+Math.sin(i)*10,cy-5-i*7,6,0,Math.PI); } ctx.stroke(); 
-        ctx.strokeStyle='#3b82f6'; ctx.lineWidth=6; ctx.beginPath(); ctx.moveTo(cx-60,cy-55); ctx.lineTo(cx-60,cy-90); ctx.lineTo(cx+50,cy-90); ctx.lineTo(cx+50,cy+90); ctx.stroke(); 
-        ctx.font=fontSafe; ctx.fillStyle="#ef4444"; ctx.textAlign="center"; ctx.fillText("البربخ (7م)", cx-130, cy-15);
-        ctx.fillStyle="#3b82f6"; ctx.fillText("الأسهرين (45سم)", cx, cy-100);
-        ctx.fillText("الإحليل", cx+90, cy+60);
-        requestAnimationFrame(d5); } d5();
-
-    // 6. Glands
-    const c6=setupCanvas('canvas-glands'); let t6=0;
-    function d6() { const {ctx, getW, getH}=c6; ctx.clearRect(0,0,getW(),getH()); const cx=getW()/2, cy=getH()/2; 
-        let s=1+Math.sin(t6)*0.1; 
-        ctx.font=fontSafe; ctx.textAlign="center";
-        ctx.save(); ctx.translate(cx-30,cy-30); ctx.scale(s,s); ctx.fillStyle='#3b82f6'; ctx.beginPath(); ctx.ellipse(0,0,18,30,Math.PI/4,0,Math.PI*2); ctx.fill(); ctx.restore(); 
-        ctx.save(); ctx.translate(cx+30,cy-30); ctx.scale(s,s); ctx.fillStyle='#3b82f6'; ctx.beginPath(); ctx.ellipse(0,0,18,30,-Math.PI/4,0,Math.PI*2); ctx.fill(); ctx.restore(); 
-        ctx.fillStyle="#3b82f6"; ctx.fillText("الحويصلان المنويان", cx, cy-75);
-        ctx.save(); ctx.translate(cx,cy+20); ctx.scale(1+Math.cos(t6)*0.1,1+Math.cos(t6)*0.1); ctx.fillStyle='#f59e0b'; ctx.beginPath(); ctx.arc(0,0,25,0,Math.PI*2); ctx.fill(); ctx.restore(); 
-        ctx.fillStyle="#f59e0b"; ctx.fillText("الموثة (البروستات)", cx+95, cy+25);
-        ctx.fillStyle='#10b981'; ctx.beginPath(); ctx.arc(cx-15,cy+60,7,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.arc(cx+15,cy+60,7,0,Math.PI*2); ctx.fill(); 
-        ctx.fillStyle="#10b981"; ctx.fillText("غدتا كوبر", cx-75, cy+65);
-        ctx.strokeStyle='#cbd5e1'; ctx.lineWidth=8; ctx.globalCompositeOperation='destination-over'; ctx.beginPath(); ctx.moveTo(cx,cy-50); ctx.lineTo(cx,cy+100); ctx.stroke(); ctx.globalCompositeOperation='source-over'; 
-        t6+=0.04; requestAnimationFrame(d6); } d6();
-
-    /* =========================================================
-       4. QUIZ ENGINE (40 Comprehensive Questions)
-       ========================================================= */
-    const quizData = [
-        { type: "fill", q: "الصيغة الصبغية الجسدية الكلية للإنسان هي ... صبغي.", a: ["46", "ستة واربعون"] },
-        { type: "mcq", q: "ما هي الصيغة الصبغية للذكر الطبيعي؟", opts: ["2n = 44A + XX", "2n = 44A + XY", "1n = 22A + X", "1n = 22A + Y"], a: 1 },
-        { type: "mcq", q: "الصيغة الصبغية للأنثى تعطي بويضات من نوع واحد، صيغته:", opts: ["1n = 22A + Y", "1n = 22A + X", "2n = 44A + XY", "1n = 44A + X"], a: 1 },
-        { type: "fill", q: "المورثة المسؤولة عن التمايز الذكري تسمى مورثة ...", a: ["sry"] },
-        { type: "mcq", q: "موقع مورثة SRY:", opts: ["على الصبغي X", "على الصبغي Y", "على الصبغي 22", "في بداءة المناسل"], a: 1 },
-        { type: "mcq", q: "وظيفة مورثة SRY:", opts: ["تشرف على صنع بروتين يحول بداءة المناسل لخصية", "إفراز التستوسترون مباشرة", "تنمية أنبوبا مولر", "ضمور أنبوب وولف"], a: 0 },
-        { type: "mcq", q: "يبدأ تشكل الجهاز التناسلي في الأسبوع ... من الحمل.", opts: ["الرابع", "السابع", "العاشر", "قبل الولادة"], a: 1 },
-        { type: "fill", q: "بسبب غياب مورثة SRY تتشكل بداءة المناسل إلى ...", a: ["مبيض"] },
-        { type: "mcq", q: "من الوريقات الجنينية التي تنشأ منها بداءة المناسل:", opts: ["الوريقة الخارجية والداخلية", "الوريقة الوسطى فقط", "الوريقة الخارجية والوسطى والداخلية", "الوريقة الداخلية فقط"], a: 1 },
-        { type: "mcq", q: "الهرمون المسؤول عن نمو أنبوبا وولف لأقنية ذكرية:", opts: ["AMH", "التستوسترون", "الاستروجين", "البروجسترون"], a: 1 },
-        { type: "fill", q: "هرمون AMH الذي تفرزه الخصية وظيفته إحداث ضمور في أنبوبي ...", a: ["مولر"] },
-        { type: "mcq", q: "غياب هرمون AMH عند الأنثى يؤدي إلى:", opts: ["ضمور أنبوبي مولر", "نمو أنبوبا مولر لأقنية أنثوية", "نمو أنبوبا وولف", "تشكل خصية"], a: 1 },
-        { type: "mcq", q: "موقع تشكل الخصيتين في المرحلة الجنينية:", opts: ["في كيس الصفن", "في القناة الإربية", "داخل تجويف البطن", "في الحوض"], a: 2 },
-        { type: "fill", q: "تهاجر الخصيتان قبل الولادة إلى تجويف خارج الجسم يدعى كيس ...", a: ["الصفن"] },
-        { type: "mcq", q: "القناة العضلية البطنية التي تعبرها الخصية أثناء هجرتها تسمى:", opts: ["البربخ", "القناة الإربية", "شبكة هالر", "الإحليل"], a: 1 },
-        { type: "fill", q: "درجة الحرارة المثلى لإنتاج النطاف هي ... درجة مئوية.", a: ["35", "خمسة وثلاثون"] },
-        { type: "mcq", q: "من الحيوانات التي لا يحدث عندها هجرة الخصيتين:", opts: ["القرد والأسد", "الفيل والحوت", "الحصان والكلب", "الفيل والقرد"], a: 1 },
-        { type: "fill", q: "مرور الحبل المنوي في القناة الإربية يُحدث نقطة ضعف تسبب الفتق ...", a: ["الاربي"] },
-        { type: "mcq", q: "وظيفة عضلات كيس الصفن في الجو الحار:", opts: ["تتقلص مقربة الخصيتين", "تسترخي مبعدة الخصيتين", "تفرز AMH", "لا يحدث تغيير"], a: 1 },
-        { type: "mcq", q: "وظيفة عضلات كيس الصفن في الجو البارد:", opts: ["تسترخي مبعدة الخصيتين", "تتقلص مقربة الخصيتين", "يزداد حجمها", "تتوقف عن العمل"], a: 1 },
-        { type: "fill", q: "عدد فصوص الخصية الواحدة هو حوالي ... فص.", a: ["250", "مئتان وخمسون"] },
-        { type: "mcq", q: "موقع الأنابيب المنوية:", opts: ["بين الفصوص", "داخل فصوص الخصية", "في كيس الصفن", "في غدتا كوبر"], a: 1 },
-        { type: "fill", q: "وظيفة الأنابيب المنوية هي إنتاج ...", a: ["النطاف", "الحيوانات المنويه"] },
-        { type: "mcq", q: "موقع خلايا ليديغ (الخلايا البينية):", opts: ["داخل الأنابيب المنوية", "بين الأنابيب المنوية", "في البروستات", "في البربخ"], a: 1 },
-        { type: "mcq", q: "وظيفة خلايا ليديغ:", opts: ["إنتاج النطاف", "خزن النطاف", "تفرز الهرمونات الذكرية (الأندروجينات)", "إنتاج السائل المنوي"], a: 2 },
-        { type: "fill", q: "التستوسترون يعتبر من مجموعة الهرمونات الذكرية التي تسمى الـ...", a: ["اندروجينات", "الاندروجينات"] },
-        { type: "mcq", q: "أين تقع شبكة هالر؟", opts: ["البربخ", "المبيض", "جدار البطن", "ضمن البنية التشريحية الداخلية للخصية"], a: 3 },
-        { type: "fill", q: "طول أنبوب البربخ هو ... متر.", a: ["7", "سبعه", "سبعة"] },
-        { type: "mcq", q: "وظيفة البربخ الأساسية:", opts: ["إنتاج التستوسترون", "المستودع الرئيسي وتكتسب فيه النطاف القدرة على الحركة", "قناة بولية", "إفراز AMH"], a: 1 },
-        { type: "fill", q: "طول أنبوب الأسهرين هو ... سم.", a: ["45", "خمسة واربعون"] },
-        { type: "mcq", q: "وظيفة الأسهرين (القناة الناقلة):", opts: ["ينقل النطاف للإحليل ويُخزنها لمدة شهر تقريباً", "إنتاج النطاف", "إفراز السائل المنوي", "جميع ما سبق"], a: 0 },
-        { type: "fill", q: "القناة البولية التناسلية المشتركة التي تقع وسط القضيب الذكري تسمى ...", a: ["الاحليل", "إحليل"] },
-        { type: "mcq", q: "موقع الإحليل:", opts: ["وسط القضيب الذكري", "ملتف حول الخصية", "داخل تجويف البطن", "خلف المثانة"], a: 0 },
-        { type: "mcq", q: "وظيفة الإحليل:", opts: ["إنتاج النطاف", "تمرير سائل منوي يُضاف للنطاف", "تخزين النطاف", "إفراز الأندروجينات"], a: 1 },
-        { type: "mcq", q: "من الغدد الملحقة بجهاز التكاثر الذكري:", opts: ["الغدة النخامية", "الحويصلان المنويان", "الغدة الدرقية", "البنكرياس"], a: 1 },
-        { type: "fill", q: "غدة الموثة تسمى أيضاً بالـ...", a: ["البروستات", "بروستات"] },
-        { type: "fill", q: "من الغدد الملحقة: غدتا ...", a: ["كوبر", "cowper"] },
-        { type: "mcq", q: "متى تكتسب النطاف القدرة على الحركة الذاتية تحديداً؟", opts: ["فور إنتاجها", "عند اختلاطها بمفرزات الحويصلين المنويين في البربخ", "في الإحليل", "داخل كيس الصفن"], a: 1 },
-        { type: "fill", q: "من الحالات المرضية المذكورة في بنية الخصية (ضمن دائرة) هي دوالي ...", a: ["الخصيه", "خصيه"] },
-        { type: "fill", q: "الصيغة الصبغية لبويضة الأنثى دائماً تحوي الصبغي الجنسي ...", a: ["x", "اكس"] }
+    // 100 Comprehensive Questions
+    const questions = [
+        // 1-10: الأساس الجيني
+        { q: "كم عدد الصبغيات في الخلية الجسمية عند الإنسان؟", a: "46 صبغياً (44 جسمي + 2 جنسي)." },
+        { q: "اكتب الصيغة الصبغية الجسدية للذكر الطبيعي.", a: "2n = 44A + XY." },
+        { q: "اكتب الصيغة الصبغية الجسدية للأنثى الطبيعية.", a: "2n = 44A + XX." },
+        { q: "ما هي أنواع الأعراس التي يعطيها الذكر مع ذكر الصيغة؟", a: "نوعان: (1n = 22A + X) و (1n = 22A + Y)." },
+        { q: "ما هي أنواع الأعراس التي تعطيها الأنثى مع ذكر الصيغة؟", a: "نوع واحد فقط: (1n = 22A + X)." },
+        { q: "أين تقع مورثة SRY؟", a: "على الصبغي الجنسي (Y)." },
+        { q: "ما هي وظيفة المورثة SRY؟", a: "تشرف على صنع بروتين خاص يتدخل في تحول بداءة المناسل إلى خصية." },
+        { q: "في أي أسبوع يبدأ تشكل الجهاز التناسلي عند الجنين؟", a: "خلال الأسبوع السابع (7) من الحمل." },
+        { q: "من أين تنشأ بداءة المناسل؟", a: "تنشأ من الوريقة الجنينية الوسطى فقط." },
+        { q: "ماذا يتشكل من بداءة المناسل في حال وجود مورثة SRY؟", a: "تتشكل خصية." },
+        // 11-20: التمايز الجنيني
+        { q: "ماذا يتشكل من بداءة المناسل في حال غياب مورثة SRY؟", a: "يتشكل مبيض." },
+        { q: "ماذا تفرز الخصية جنينياً لتشكيل الأقنية التناسلية؟", a: "تفرز هرمون التستوسترون وهرمون AMH." },
+        { q: "ما هي وظيفة هرمون التستوسترون المفرز جنينياً؟", a: "يؤدي إلى نمو أنبوبا وولف إلى أقنية تناسلية ذكرية." },
+        { q: "ما هي وظيفة هرمون AMH المفرز جنينياً من الخصية؟", a: "يؤدي إلى ضمور أنبوبي مولر." },
+        { q: "ماذا ينتج عن غياب هرمون التستوسترون جنينياً عند الأنثى؟", a: "يؤدي إلى ضمور أنبوبي وولف." },
+        { q: "ماذا ينتج عن غياب هرمون AMH جنينياً عند الأنثى؟", a: "يسمح بنمو أنبوبا مولر إلى أقنية تناسلية أنثوية." },
+        { q: "أين تتشكل الخصيتان في المرحلة الجنينية؟", a: "تتشكل داخل تجويف البطن." },
+        { q: "إلى أين تهاجر الخصيتان قبل الولادة؟", a: "إلى خارج الجسم لتدعى كيس الصفن." },
+        { q: "ما هو الممر الذي تعبره الخصية أثناء هجرتها؟", a: "القناة الإربية عبر البنية العضلية البطنية." },
+        { q: "لماذا تهاجر الخصيتان إلى كيس الصفن؟", a: "لأن درجة الحرارة المثلى لإنتاج النطاف هي 35°C، أي أقل بدرجتين من حرارة الجسم الطبيعية." },
+        // 21-30: بنية الخصية والمشاكل
+        { q: "علل: إصابة بعض الذكور بالفتق الإربي.", a: "لأن مرور الحبل المنوي في القناة الإربية يُحدث نقاط ضعف في جدار البطن قد يبرز منها نسيج أمعاء." },
+        { q: "اذكر أمثلة لحيوانات ثديية لا تهاجر خصاها (تبقى في البطن).", a: "الفيل والحوت." },
+        { q: "ما هو دور عضلات كيس الصفن في درجات الحرارة المنخفضة (البرد)؟", a: "تتقلص مقربة الخصيتين من الجسم للتدفئة." },
+        { q: "ما هو دور عضلات كيس الصفن في درجات الحرارة المرتفعة؟", a: "تسترخي مبعدة الخصيتين عن الجسم للتبريد." },
+        { q: "ما هو المرض الذي يصيب أوردة كيس الصفن بالتوسع؟", a: "دوالي الخصية." },
+        { q: "كم عدد فصوص الخصية الواحدة تقريباً؟", a: "250 فصاً." },
+        { q: "ما هو موقع الأنابيب المنوية؟", a: "تقع داخل فصوص الخصية." },
+        { q: "ما هي وظيفة الأنابيب المنوية؟", a: "إنتاج النطاف." },
+        { q: "أين تقع خلايا ليديغ (الخلايا البينية)؟", a: "تقع بين الأنابيب المنوية في الخصية." },
+        { q: "ما هي وظيفة خلايا ليديغ (البينية)؟", a: "تفرز الهرمونات الجنسية الذكرية (الأندروجينات) مثل هرمون التستوسترون." },
+        // 31-40: الأقنية الناقلة
+        { q: "ما هو موقع شبكة هالر؟", a: "ضمن البنية الداخلية للخصية (شبكة الخصية)." },
+        { q: "ما هي الأقنية الناقلة للنطاف لدى الإنسان؟", a: "البربخ، الأسهرين، والإحليل." },
+        { q: "كم يبلغ طول أنبوب البربخ وما هي بنيته؟", a: "طوله 7 أمتار، وهو أنبوب رفيع ملتف." },
+        { q: "ما هي الوظيفة الأساسية للبربخ؟", a: "المستودع الرئيسي للنطاف، وفيه تكتسب النطاف القدرة على الحركة الذاتية." },
+        { q: "كم يبلغ طول أنبوب الأسهرين (القناة الناقلة)؟", a: "45 سم." },
+        { q: "ما هي وظيفة الأسهرين؟", a: "ينقل النطاف إلى الإحليل، ويخزنها لمدة شهر تقريباً." },
+        { q: "ما هو موقع الإحليل؟", a: "قناة تقع وسط القضيب الذكري." },
+        { q: "ما هي وظيفة الإحليل؟", a: "قناة بولية تناسلية مشتركة يمرر النطاف ويُضاف له سائل منوي." },
+        { q: "اذكر أسماء الغدد الملحقة بجهاز التكاثر الذكري.", a: "الحويصلان المنويان، البروستات (الموثة)، وغدتا كوبر." },
+        { q: "ما هو موقع الحويصلان المنويان؟", a: "خلف قاعدة المثانة." },
+        // 41-50: الغدد الملحقة
+        { q: "ما نسبة مفرزات الحويصلان المنويان من السائل المنوي؟", a: "تشكل نحو 60% من كمية السائل المنوي." },
+        { q: "ما هو السكر الذي يفرزه الحويصلان المنويان وما وظيفته؟", a: "سكر الفواكه (الفركتوز)، وظيفته تتغذى عليه النطاف." },
+        { q: "ما هي وظيفة البروستاغلاندينات المفرزة من الحويصلان المنويان؟", a: "تحث على تقلص العضلات الملساء في المجرى التناسلي الذكري، والأنثوي." },
+        { q: "ما هو موقع غدة البروستات (الموثة)؟", a: "تحيط بالجزء الأول من الإحليل." },
+        { q: "ما هي صفات السائل الذي تفرزه البروستات ونسبته؟", a: "سائل حليبي حمضي إلى حد ما، يشكل 20 - 30% من كمية السائل المنوي." },
+        { q: "ما هي وظيفة شوارد الكالسيوم (Ca++) المفرزة من البروستات؟", a: "تخفف لزوجة السائل المنوي، وتنشط حركة النطاف." },
+        { q: "ما هو البلاسمين المنوي وما وظيفته؟", a: "هو بروتين تفرزه البروستات مضاد للجراثيم، يمنع حدوث التهابات المجرى البولي التناسلي." },
+        { q: "أين تقع غدتا كوبر؟", a: "قرب قاعدة القضيب الذكري." },
+        { q: "ما طبيعة المادة التي تفرزها غدتا كوبر؟", a: "تفرزان مادة مخاطية قلوية." },
+        { q: "ما هي وظيفة مفرزات غدتا كوبر؟", a: "تخفف حموضة البول المتبقي في الإحليل، وتخفف حموضة المهبل لدى الأنثى أثناء الاقتران." },
+        // 51-60: السائل المنوي وتشكل النطاف
+        { q: "ما هي قيمة الـ PH التقريبية للسائل المنوي النهائي؟", a: "الـ PH يتراوح بين 6 إلى 6.5." },
+        { q: "متى يبدأ تشكل النطاف لدى الذكر البشري وإلى متى يستمر؟", a: "يبدأ تشكل النطاف بدءاً من سن البلوغ ويستمر تقريباً مدى الحياة." },
+        { q: "كم يوماً تستغرق العملية الكاملة لتشكل النطفة؟", a: "نحو 64 يوماً." },
+        { q: "أين تتم مراحل تشكل النطاف بالتحديد؟", a: "في جدار الأنابيب المنوية (من القسم المحيطي نحو اللمعة)." },
+        { q: "ما هي الخلايا الأولى التي تبدأ منها مرحلة تشكل النطاف؟", a: "خلايا الظهارة المنشئة." },
+        { q: "ما هي الصيغة الصبغية لخلايا الظهارة المنشئة، وماذا يطرأ عليها؟", a: "صيغتها 2n، وتطرأ عليها سلسلة انقسامات خيطية لتعطي منسليات منوية." },
+        { q: "ما هي الصيغة الصبغية للمنسلية المنوية وكيف تتطور؟", a: "صيغتها 2n، وتنمو وتكبر متحولة إلى خلية منوية أولية." },
+        { q: "ما هي الصيغة الصبغية للخلية المنوية الأولية وما نوع الانقسام الذي تعانيه؟", a: "صيغتها 2n، وتعاني الانقسام المنصف الأول." },
+        { q: "ماذا ينتج عن الانقسام المنصف الأول للخلية المنوية الأولية وما صيغتها؟", a: "ينتج خليتان منويتان ثانويتان صيغتهما 1n." },
+        { q: "ماذا ينتج عن الانقسام المنصف الثاني للخلية المنوية الثانوية؟", a: "ينتج منويات صيغتها 1n." },
+        // 61-70: تمايز النطاف وخلايا سرتولي
+        { q: "كيف تتحول المنوية (1n) إلى نطفة ناضجة؟", a: "تخضع لعملية تمايز شكلية (دون انقسام) لتصبح نطفة (1n)." },
+        { q: "ما أهمية وجود جسور من السيتوبلازما بين المنويات المتجاورة أثناء تطورها؟", a: "تؤمن نقل المواد المغذية والهرمونات فيما بينها مما يضمن تطورها إلى نطاف في آن معاً." },
+        { q: "إلى ماذا يتحول جهاز غولجي أثناء تمايز المنوية إلى نطفة؟", a: "يتحول إلى جسيم طرفي يتوضع في مقدمة رأس النطفة." },
+        { q: "أين تتجمع الجسيمات الكوندرية في النطفة المتمايزة؟", a: "تتجمع حول بداية السوط في القطعة المتوسطة." },
+        { q: "ما هي وظيفة الجسيمات الكوندرية في النطفة؟", a: "تزود النطفة بالطاقة الضرورية لأداء عملياتها الحيوية وحركتها." },
+        { q: "من أين تنشأ الأنيبيبات الدقيقة التي تشكل سوط النطفة؟", a: "تنشأ من المريكز البعيد." },
+        { q: "ماذا يحدث لهيولى (سيتوبلازما) المنوية أثناء تمايزها، ولماذا؟", a: "تفقد المنوية معظم هيولاها، لتسهيل حركتها." },
+        { q: "مما تتألف أقسام النطفة البشرية الناضجة؟", a: "تتألف من: رأس (يحوي النواة والجسيم الطرفي)، قطعة متوسطة، وذيل (سوط)." },
+        { q: "كيف تبدو خلايا سرتولي في المقطع العرضي للأنبوب المنوي؟", a: "هي خلايا حاضنة تبدو متطاولة على شكل عمود سيتوبلاسمي." },
+        { q: "اذكر الوظيفة الغذائية لخلايا سرتولي.", a: "تعتبر مصدر غذائي للمنويات التي تتمايز إلى نطاف." },
+        // 71-80: وظائف سرتولي والعقم
+        { q: "ماذا تفعل خلايا سرتولي بالهيولى المفقودة من المنويات؟", a: "تقوم ببلعمتها." },
+        { q: "ما هو الحاجز الذي تساهم خلايا سرتولي في تشكيله؟", a: "الحاجز الدموي الخصيوي." },
+        { q: "ما هي وظيفة الحاجز الدموي الخصيوي الأساسية اتجاه جهاز المناعة؟", a: "يمنع خلايا جهاز المناعة من مهاجمة النطاف." },
+        { q: "علل: تهاجم خلايا جهاز المناعة النطاف إذا تم اختراق الحاجز الدموي الخصيوي.", a: "لأن غشاء النطفة يمتلك مولدات ضد خاصة لا توجد في أغشية الخلايا الجسمية الأخرى." },
+        { q: "ماذا يسمى السائل الذي تسبح فيه النطاف ومما يتكون؟", a: "السائل المنوي، يتكون من مفرزات الغدد الملحقة بجهاز التكاثر والنطاف." },
+        { q: "كم يشكل حجم النطاف بالنسبة لحجم السائل المنوي؟", a: "تشكل النطاف حوالي 10% من حجم السائل المنوي." },
+        { q: "ما هو العدد الطبيعي للنطاف لدى الذكور البالغين الأسوياء؟", a: "ما بين (20 - 100) مليون نطفة في الميليلتر الواحد." },
+        { q: "متى يعتبر الذكر البشري مصاباً بعقم فيزيولوجي؟", a: "إذا قل عدد النطاف عن 20 مليون نطفة / مل." },
+        { q: "ما هي الخلية التي تحوي نواة ضمن بنية النطفة؟", a: "رأس النطفة يحوي النواة." },
+        { q: "أين يتواجد المريكز القريب والمريكز البعيد في النطفة؟", a: "ضمن القطعة المتوسطة للنطفة." },
+        // 81-90: أسئلة الترتيب
+        { q: "رتب مراحل تطور النطفة بدءاً من الخلية المنوية الأولية.", a: "خلية منوية أولية ← خلية منوية ثانوية ← منوية ← نطفة ناضجة." },
+        { q: "رتب الأقنية الناقلة للنطاف مساراً من الخصية إلى الخارج.", a: "البربخ ← الأسهرين ← الإحليل." },
+        { q: "رتب أجزاء النطفة البشرية من الأمام إلى الخلف.", a: "الجسيم الطرفي (في الرأس) ← النواة (في الرأس) ← القطعة المتوسطة ← الذيل (السوط)." },
+        { q: "رتب الخلايا في الأنبوب المنوي من الأقرب لجدار الأنبوب المحيطي إلى لمعة الأنبوب.", a: "خلايا ظهارة منشئة ← منسليات منوية ← خلايا منوية أولية ← خلايا منوية ثانوية ← منويات ← نطاف." },
+        { q: "رتب الغدد الملحقة تشريحياً من الأعلى للأسفل (حسب مسار المجرى التناسلي).", a: "الحويصلان المنويان (خلف المثانة) ← البروستات (تحيط بأول الإحليل) ← غدتا كوبر (قرب قاعدة القضيب)." },
+        { q: "رتب انقسامات الخلية المنوية الأولية حتى تصبح منويات.", a: "خلية منوية أولية تعاني انقسام منصف أول فتعطي خليتين منويتين ثانويتين، ثم كل خلية ثانوية تعاني انقسام منصف ثاني فتعطي منويات." },
+        { q: "رتب خطوات تمايز المنوية المتعلقة بالبنى الخلوية.", a: "تشكل الجسيم الطرفي من غولجي ← تجمع الجسيمات الكوندرية في القطعة المتوسطة ← تشكل السوط من المريكز البعيد ← فقدان معظم الهيولى." },
+        { q: "رتب الأقنية حسب الطول من الأطول إلى الأقصر.", a: "البربخ (7 أمتار) ثم الأسهرين (45 سم)." },
+        { q: "رتب الخلايا حسب الصيغة الصبغية: منسلية، منوية ثانوية، خلية ظهارة.", a: "خلية ظهارة منشئة (2n) = منسلية منوية (2n) | منوية ثانوية (1n)." },
+        { q: "رتب نسب المفرزات في السائل المنوي من الأكبر للأصغر.", a: "مفرزات الحويصلان (60%) > مفرزات البروستات (20-30%) > حجم النطاف (10%)." },
+        // 91-100: أسئلة المقارنة
+        { q: "قارن بين: هرمون التستوسترون وهرمون AMH من حيث الوظيفة الجنينية.", a: "التستوسترون: يؤدي لنمو أنبوبا وولف لأقنية ذكرية. | AMH: يؤدي لضمور أنبوبي مولر." },
+        { q: "قارن بين: أنبوب وولف وأنبوب مولر من حيث المصير عند الجنين الذكر.", a: "وولف: ينمو ويتحول لأقنية تناسلية ذكرية بفضل التستوسترون. | مولر: يضمر بفضل هرمون AMH." },
+        { q: "قارن بين: خلايا ليديغ وخلايا سرتولي من حيث الموقع.", a: "ليديغ: بين الأنابيب المنوية في الخصية. | سرتولي: في جدار الأنبوب المنوي (تبدو كعمود سيتوبلاسمي)." },
+        { q: "قارن بين: خلايا ليديغ وخلايا سرتولي من حيث الوظيفة الرئيسية.", a: "ليديغ: تفرز الهرمونات الذكرية (الأندروجينات). | سرتولي: تغذية المنويات، بلعمة الهيولى، وتشكيل الحاجز الدموي الخصيوي." },
+        { q: "قارن بين: الخلية المنوية الأولية والخلية المنوية الثانوية من حيث الصيغة الصبغية ونوع الانقسام التالي.", a: "الأولية: صيغتها 2n وتعاني انقسام منصف أول. | الثانوية: صيغتها 1n وتعاني انقسام منصف ثاني." },
+        { q: "قارن بين: البربخ والأسهرين من حيث الطول والوظيفة.", a: "البربخ: 7 أمتار، مستودع رئيسي وتكتسب فيه النطاف الحركة. | الأسهرين: 45 سم، ينقل النطاف ويخزنها لمدة شهر." },
+        { q: "قارن بين: مفرزات الحويصلان المنويان ومفرزات غدتا كوبر من حيث طبيعة المادة الكيميائية.", a: "الحويصلان: تفرز الفركتوز والبروستاغلاندينات. | كوبر: تفرز مادة مخاطية قلوية." },
+        { q: "قارن بين: البروستات وغدتا كوبر من حيث درجة حموضة المفرزات ووظيفتها.", a: "البروستات: سائل حمضي، لتخفيف اللزوجة وتنشيط الحركة. | كوبر: سائل قلوي، لتخفيف حموضة البول والمهبل." },
+        { q: "قارن بين: المريكز القريب والمريكز البعيد من حيث الوظيفة في النطفة.", a: "المريكز البعيد: تنشأ منه الأنيبيبات الدقيقة التي تشكل السوط (الذيل). المريكز القريب موجود في القطعة المتوسطة (لم تذكر له وظيفة محددة في المخطط سوى موقعه)." },
+        { q: "قارن بين: الذكر الطبيعي والذكر المصاب بالعقم الفيزيولوجي من حيث عدد النطاف.", a: "الطبيعي: 20 إلى 100 مليون نطفة/مل. | العقيم فيزيولوجياً: أقل من 20 مليون نطفة/مل." }
     ];
 
-    const form = document.getElementById('quiz-form');
-    quizData.forEach((q, i) => {
-        const card = document.createElement('div'); card.className = 'q-card'; card.id = `qc-${i}`;
-        let html = `<div class="q-text">${i + 1}. ${q.q}</div>`;
-        if (q.type === "mcq") {
-            html += `<div class="mcq-options">`;
-            q.opts.forEach((opt, j) => { html += `<label class="mcq-label" id="lbl-${i}-${j}"><input type="radio" name="q${i}" value="${j}">${opt}</label>`; });
-            html += `</div>`;
-        } else if (q.type === "fill") {
-            html += `<input type="text" class="fill-input" id="fill-${i}" placeholder="اكتب إجابتك هنا...">
-                     <div class="correct-hint" id="hint-${i}">✅ الإجابة الصحيحة: ${q.a[0]}</div>`;
+    const qaContainer = document.getElementById('qa-container');
+    
+    // Categorize logic based on index
+    let currentCategory = "";
+    
+    questions.forEach((item, index) => {
+        let catLabel = "";
+        if (index === 0) catLabel = "أسئلة الأساس الجيني والتمايز";
+        else if (index === 20) catLabel = "أسئلة البنية والتشريح";
+        else if (index === 40) catLabel = "أسئلة الغدد الملحقة";
+        else if (index === 50) catLabel = "أسئلة تشكل النطاف ووظائف الخلايا";
+        else if (index === 80) catLabel = "أسئلة الترتيب والتسلسل";
+        else if (index === 90) catLabel = "أسئلة المقارنات التحليلية";
+
+        if (catLabel) {
+            const catDiv = document.createElement('div');
+            catDiv.className = 'category-label';
+            catDiv.innerText = catLabel;
+            qaContainer.appendChild(catDiv);
         }
-        card.innerHTML = html; form.appendChild(card);
+
+        const div = document.createElement('div');
+        div.className = 'qa-item';
+        div.innerHTML = `
+            <button class="qa-question"><span class="q-num">${index + 1}</span> ${item.q}</button>
+            <div class="qa-answer">${item.a}</div>
+        `;
+        qaContainer.appendChild(div);
     });
 
-    document.getElementById('btn-submit').addEventListener('click', (e) => {
-        e.preventDefault(); let score = 0, answered = 0;
-        quizData.forEach((q, i) => {
-            const card = document.getElementById(`qc-${i}`); card.className = 'q-card';
-            if (q.type === "mcq") {
-                const selected = document.querySelector(`input[name="q${i}"]:checked`);
-                q.opts.forEach((_, j) => document.getElementById(`lbl-${i}-${j}`).className = 'mcq-label');
-                if (selected) {
-                    answered++; const val = parseInt(selected.value); const correctLbl = document.getElementById(`lbl-${i}-${q.a}`);
-                    if (val === q.a) { score++; card.classList.add('correct'); correctLbl.classList.add('is-correct'); } 
-                    else { card.classList.add('wrong'); document.getElementById(`lbl-${i}-${val}`).classList.add('is-wrong'); correctLbl.classList.add('is-correct'); }
-                }
-            } else if (q.type === "fill") {
-                const input = document.getElementById(`fill-${i}`); const hint = document.getElementById(`hint-${i}`);
-                const userVal = normalizeText(input.value);
-                if (input.value.trim() !== "") {
-                    answered++;
-                    if (q.a.some(ans => userVal === normalizeText(ans))) { score++; card.classList.add('correct'); input.className = 'fill-input is-correct'; hint.style.display = 'none'; } 
-                    else { card.classList.add('wrong'); input.className = 'fill-input is-wrong'; hint.style.display = 'block'; }
-                }
+    // Accordion Logic
+    document.querySelectorAll('.qa-question').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const parent = btn.parentElement;
+            const isActive = parent.classList.contains('active');
+            
+            document.querySelectorAll('.qa-item').forEach(item => item.classList.remove('active'));
+            
+            if (!isActive) {
+                parent.classList.add('active');
             }
         });
-
-        if (answered < quizData.length) { alert(`أجبت على ${answered} من 40. يرجى إكمال جميع الأسئلة يا بطل!`); return; }
-        document.getElementById('modal-score').innerText = `${score}/40`;
-        const fb = document.getElementById('modal-feedback');
-        if (score === 40) fb.innerText = "إبداع مطلق! لقد حققت العلامة التامة وفهمت الدرسين بكل تفاصيلهما.";
-        else if (score >= 30) fb.innerText = "أداء ممتاز! راجع أخطاءك البسيطة لتثبيت المعلومات.";
-        else fb.innerText = "تحتاج لبعض التركيز. راجع الأخطاء، واقرأ الجداول من جديد.";
-        document.getElementById('results-modal').classList.add('active');
-        document.body.style.overflow = 'hidden';
     });
 
-    function closeQuizModal() {
-        document.getElementById('results-modal').classList.remove('active');
-        document.body.style.overflow = '';
-        const firstWrong = document.querySelector('.q-card.wrong');
-        if(firstWrong) firstWrong.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-
-    /* =========================================================
-       5. AI CHAT
-       ========================================================= */
-    const WORKER_URL = "https://empty-hat-f095.morhaf-ali-5r.workers.dev/";
-    let chatHist = [{role:"system", content:"أنت مساعد ذكي للأحياء. أجب بناءً على: المناسل من الوريقة الوسطى فقط. SRY على Y تصنع خصية. الخصية بطن->صفن عبر إربية. الحرارة 35. 250 فص. ليديغ تفرز تستوسترون. البربخ 7م. الأسهر 45سم. الإحليل وسط القضيب."}];
-    
+    // AI Chat Widget Logic
     function toggleChat() {
-        const act = document.getElementById('chat-window').classList.toggle('active');
-        document.getElementById('chat-overlay').classList.toggle('active');
-        if(act) document.getElementById('chat-input').focus();
-    }
-    
-    async function sendMessage() {
-        const inp = document.getElementById('chat-input'); const txt = inp.value.trim(); if(!txt) return;
-        appendMsg(txt, 'user'); inp.value=''; chatHist.push({role:"user", content:txt});
-        try {
-            const res = await fetch(WORKER_URL, { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({messages:chatHist, temperature:0.3})});
-            const data = await res.json();
-            if(data.choices) { appendMsg(data.choices[0].message.content, 'ai'); chatHist.push(data.choices[0].message); }
-        } catch(e) { appendMsg("عذراً، خطأ بالاتصال.", 'ai'); }
+        const chatWin = document.getElementById('chat-window');
+        chatWin.classList.toggle('active');
+        if (chatWin.classList.contains('active')) {
+            document.getElementById('chat-input').focus();
+        }
     }
 
-    function appendMsg(txt, type) {
-        const div = document.createElement('div'); div.className = `message ${type}`;
-        div.innerHTML = type==='ai' ? marked.parse(txt) : txt;
-        const cont = document.getElementById('chat-messages'); cont.appendChild(div); cont.scrollTop = cont.scrollHeight;
+    function appendMsg(text, type) {
+        const container = document.getElementById('chat-messages');
+        const div = document.createElement('div');
+        div.className = `msg ${type}`;
+        div.innerHTML = type === 'ai' ? marked.parse(text) : text;
+        container.appendChild(div);
+        container.scrollTop = container.scrollHeight;
+    }
+
+    function sendMessage() {
+        const input = document.getElementById('chat-input');
+        const text = input.value.trim();
+        if (!text) return;
+
+        appendMsg(text, 'user');
+        input.value = '';
+
+        setTimeout(() => {
+            let reply = "بناءً على الشرح المتوفر: ";
+            if (text.includes("سرتولي")) {
+                reply += "خلايا سرتولي هي خلايا داعمة في جدار الأنبوب المنوي، تغذي المنويات وتبلعم الهيولى وتشكل الحاجز الدموي الخصيوي.";
+            } else if (text.includes("مقارنة") || text.includes("قارن")) {
+                reply += "يمكنك العثور على جميع أسئلة المقارنة في نهاية بنك الأسئلة الشامل (الأسئلة من 91 إلى 100).";
+            } else if (text.includes("ترتيب") || text.includes("رتب")) {
+                reply += "أسئلة الترتيب متوفرة في بنك الأسئلة (من 81 إلى 90) وتشمل ترتيب مراحل تشكل النطاف والأقنية.";
+            } else if (text.includes("عقم")) {
+                reply += "العقم الفيزيولوجي يحدث عندما يقل عدد النطاف عن 20 مليون نطفة في الميليلتر الواحد.";
+            } else {
+                reply = "سؤال جيد! الرجاء مراجعة الجداول وبنك الأسئلة الشامل حيث يغطي 100 فكرة عن التكاثر وتشكيل النطاف. هل هناك نقطة محددة أخرى؟";
+            }
+            appendMsg(reply, 'ai');
+        }, 600);
     }
 </script>
+
 </body>
 </html>
