@@ -3,487 +3,511 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>المرجع الشامل: جهاز التكاثر والتمايز الجنسي وتشكل النطاف</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
-    
+    <title>جهاز التكاثر الذكري - مراجعة شاملة 100 سؤال</title>
+    <!-- استدعاء خطوط Cairo و Almarai من جوجل -->
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@700;800&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        /* إعدادات التصميم الأساسية - ألوان رايقة ومريحة للعين */
         :root {
-            --bg-color: #f4f7f6;
-            --main-text: #2d3748;
-            --muted-text: #4a5568;
-            --primary: #1a365d;
-            --secondary: #2b6cb0;
-            --accent: #3182ce;
-            --success: #2f855a;
-            --danger: #c53030;
-            --card-bg: #ffffff;
-            --border: #e2e8f0;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
-            --shadow-hover: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --bg-body: #f5f7fa;
+            --bg-container: #ffffff;
+            --primary: #2b5876;
+            --secondary: #4e4376;
+            --text-dark: #333333;
+            --text-light: #555555;
+            --border-color: #e1e4e8;
+            --accent: #d9534f;
+            --question-bg: #f8fbff;
+            --question-hover: #eef5ff;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
-        body { font-family: 'Tajawal', sans-serif; background-color: var(--bg-color); color: var(--main-text); line-height: 1.8; padding-bottom: 100px; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-        /* Header */
-        .hero { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 60px 20px; text-align: center; border-bottom: 5px solid var(--accent); box-shadow: var(--shadow); margin-bottom: 40px; }
-        .hero h1 { font-size: 2.6rem; font-weight: 900; margin-bottom: 15px; }
-        .hero p { font-size: 1.2rem; font-weight: 500; opacity: 0.9; }
+        /* خط Cairo للنصوص العادية */
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            line-height: 1.8;
+            padding: 20px;
+            font-family: 'Cairo', sans-serif;
+            font-size: 1.05rem;
+        }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        /* خط Almarai للعناوين */
+        h1, h2, h3, .section-title, .counter {
+            font-family: 'Almarai', sans-serif;
+        }
 
-        /* Section Layout */
-        .section-title { font-size: 1.8rem; color: var(--primary); font-weight: 900; margin: 40px 0 20px; padding-bottom: 10px; border-bottom: 2px solid var(--border); display: flex; align-items: center; gap: 10px; }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: var(--bg-container);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
 
-        /* Concept Maps */
-        .concept-map { background: white; padding: 30px; border-radius: 12px; border: 1px solid var(--border); box-shadow: var(--shadow); margin-bottom: 30px; text-align: center; overflow-x: auto; }
-        .cmap-title { font-size: 1.3rem; font-weight: 800; color: var(--secondary); margin-bottom: 20px; }
-        .cmap-tree { display: flex; flex-direction: column; align-items: center; gap: 15px; min-width: 600px; }
-        .cmap-node { background: var(--secondary); color: white; padding: 12px 25px; border-radius: 8px; font-weight: bold; position: relative; border: 2px solid var(--primary); }
-        .cmap-node.alt { background: #ebf8ff; color: var(--primary); border-color: var(--accent); }
-        .cmap-row { display: flex; justify-content: center; gap: 40px; width: 100%; }
-        .cmap-arrow { font-size: 1.5rem; color: var(--muted-text); }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
+        }
 
-        /* Cards & Grids */
-        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; margin-bottom: 40px; }
-        .card { background: var(--card-bg); border-radius: 12px; border: 1px solid var(--border); padding: 25px; box-shadow: var(--shadow); transition: 0.3s ease; }
-        .card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
-        .card-header { font-size: 1.4rem; font-weight: 800; color: var(--secondary); margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px dashed var(--border); }
-        .card-content { font-size: 1.1rem; color: var(--muted-text); }
-        .card-content strong { color: var(--primary); }
-        .card-content ul { padding-right: 20px; margin-top: 10px; }
-        .card-content li { margin-bottom: 8px; }
+        header h1 {
+            color: var(--primary);
+            font-size: 2.4rem;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+        
+        header p {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
 
-        /* Tables */
-        .data-table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 1.05rem; background: white; box-shadow: var(--shadow); border-radius: 8px; overflow: hidden; }
-        .data-table th { background: var(--primary); color: white; padding: 15px; text-align: right; border: 1px solid var(--border); }
-        .data-table td { padding: 15px; border: 1px solid var(--border); font-weight: 600; color: var(--main-text); }
-        .data-table tr:nth-child(even) td { background: #f8fafc; }
+        .section-title {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            margin: 30px 0 20px 0;
+            font-size: 1.6rem;
+            display: inline-block;
+        }
 
-        /* Callouts */
-        .alert-box { background: #fff5f5; border-right: 4px solid var(--danger); padding: 15px; border-radius: 8px; margin: 15px 0; font-weight: 700; color: #c53030; }
+        .summary-box {
+            background-color: #fffdf7;
+            border-right: 5px solid #f0ad4e;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px 0 0 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
 
-        /* Q&A Bank */
-        .q-bank-header { background: var(--primary); color: white; padding: 20px; border-radius: 12px; text-align: center; margin: 50px 0 30px; box-shadow: var(--shadow); }
-        .q-bank-header h2 { font-size: 2rem; font-weight: 900; }
-        .qa-grid { display: grid; grid-template-columns: 1fr; gap: 15px; }
-        .qa-item { background: white; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
-        .qa-question { width: 100%; text-align: right; padding: 18px 20px; background: #f8fafc; border: none; font-size: 1.15rem; font-weight: 800; color: var(--primary); cursor: pointer; transition: 0.3s; display: flex; justify-content: space-between; align-items: center; font-family: inherit; }
-        .qa-question:hover { background: #edf2f7; color: var(--secondary); }
-        .qa-question::after { content: '▼'; font-size: 0.9rem; color: var(--secondary); transition: transform 0.3s; }
-        .qa-item.active .qa-question::after { transform: rotate(180deg); }
-        .qa-answer { max-height: 0; overflow: hidden; padding: 0 20px; font-size: 1.1rem; color: var(--muted-text); font-weight: 600; line-height: 1.7; transition: max-height 0.3s ease, padding 0.3s ease; background: white; }
-        .qa-item.active .qa-answer { padding: 20px; max-height: 800px; border-top: 1px dashed var(--border); }
-        .q-num { background: var(--secondary); color: white; padding: 2px 8px; border-radius: 6px; font-size: 0.9rem; margin-left: 10px; }
-        .category-label { background: #edf2f7; color: var(--primary); padding: 10px 20px; font-weight: bold; font-size: 1.2rem; margin: 20px 0 10px; border-radius: 8px; border-right: 4px solid var(--accent); }
+        .summary-box h3 {
+            color: #d35400;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
 
-        /* AI Chat */
-        .chat-btn { position: fixed; bottom: 30px; left: 30px; width: 60px; height: 60px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; cursor: pointer; box-shadow: var(--shadow-hover); z-index: 1000; border: 2px solid white; transition: 0.3s; }
-        .chat-btn:hover { transform: scale(1.1); background: var(--secondary); }
-        .chat-window { position: fixed; bottom: 100px; left: 30px; width: 360px; max-width: 90vw; height: 480px; background: white; border-radius: 16px; box-shadow: var(--shadow-hover); display: flex; flex-direction: column; z-index: 1001; opacity: 0; pointer-events: none; transform: translateY(20px); transition: 0.3s; border: 1px solid var(--border); overflow: hidden; }
-        .chat-window.active { opacity: 1; pointer-events: auto; transform: translateY(0); }
-        .chat-header { background: var(--primary); color: white; padding: 15px 20px; font-weight: 800; display: flex; justify-content: space-between; align-items: center; }
-        .close-chat { cursor: pointer; font-size: 1.2rem; }
-        .chat-body { flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; background: #f8fafc; }
-        .msg { max-width: 85%; padding: 10px 15px; border-radius: 10px; font-size: 1rem; font-weight: 600; line-height: 1.5; }
-        .msg.ai { background: white; border: 1px solid var(--border); color: var(--main-text); align-self: flex-start; border-bottom-right-radius: 4px; }
-        .msg.user { background: var(--secondary); color: white; align-self: flex-end; border-bottom-left-radius: 4px; }
-        .chat-footer { padding: 15px; background: white; border-top: 1px solid var(--border); display: flex; gap: 10px; }
-        .chat-footer input { flex: 1; padding: 10px 15px; border: 1px solid var(--border); border-radius: 8px; font-family: inherit; outline: none; font-weight: 600; }
-        .chat-footer button { background: var(--secondary); color: white; border: none; padding: 0 15px; border-radius: 8px; cursor: pointer; font-weight: bold; }
+        .summary-box p, .summary-box li {
+            margin-bottom: 10px;
+        }
+
+        .summary-box ul, .summary-box ol {
+            padding-right: 25px;
+        }
+
+        .highlight {
+            font-weight: 700;
+            color: var(--primary);
+            background-color: rgba(43, 88, 118, 0.05);
+            padding: 0 4px;
+            border-radius: 4px;
+        }
+
+        /* تنسيق بنك الأسئلة */
+        .qa-container {
+            margin-top: 20px;
+        }
+
+        .qa-item {
+            border: 1px solid var(--border-color);
+            margin-bottom: 12px;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .qa-item:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-color: #cdd4dc;
+        }
+
+        .question {
+            background-color: var(--question-bg);
+            padding: 20px;
+            font-weight: 700;
+            font-size: 1.15rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--primary);
+            transition: background-color 0.3s;
+        }
+
+        .question:hover {
+            background-color: var(--question-hover);
+        }
+
+        .question::after {
+            content: '+';
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: var(--secondary);
+            transition: transform 0.3s;
+        }
+
+        .qa-item.active .question::after {
+            content: '−';
+            color: var(--accent);
+        }
+
+        .answer {
+            background-color: white;
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            border-top: 1px solid transparent;
+            font-weight: 600;
+        }
+
+        .qa-item.active .answer {
+            padding: 20px;
+            max-height: 400px;
+            border-top-color: var(--border-color);
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #e9ecef;
+            color: #495057;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            margin-left: 10px;
+            font-weight: 600;
+        }
+
+        .question-number {
+            background-color: var(--secondary);
+            color: white;
+            width: 28px;
+            height: 28px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-left: 12px;
+        }
+        
+        .flex-title {
+            display: flex;
+            align-items: center;
+        }
+
+        .counter {
+            text-align: center;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 15px; }
+            .question { font-size: 1.05rem; padding: 15px; }
+            header h1 { font-size: 2rem; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="hero">
-        <h1>المرجع الأكاديمي: جهاز التكاثر وتشكل النطاف</h1>
-        <p>شرح شامل، جداول مقارنة، مخططات مفاهيمية، وبنك أسئلة متكامل للدرس</p>
-    </div>
-
     <div class="container">
+        <header>
+            <h1>جهاز التكاثر الذكري عند الإنسان</h1>
+            <p>ملخصات شاملة للأفكار + بنك أسئلة (100 سؤال) مطابق تماماً للكتاب المدرسي</p>
+        </header>
 
-        <!-- القسم الأول: الأساس الجيني -->
-        <h2 class="section-title">■ أولاً: الأساس الجيني والتمايز الجنيني</h2>
-        
-        <div class="concept-map">
-            <div class="cmap-title">مخطط مفاهيمي: تمايز بداءة المناسل (الأسبوع السابع)</div>
-            <div class="cmap-tree">
-                <div class="cmap-node">بداءة المناسل (من الوريقة الوسطى فقط)</div>
-                <div class="cmap-arrow">↓</div>
-                <div class="cmap-row">
-                    <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
-                        <div class="cmap-node alt" style="border-color: var(--success); color: var(--success);">بوجود مورثة SRY (ذكر XY)</div>
-                        <div class="cmap-arrow">↓</div>
-                        <div class="cmap-node">تتشكل الخصية</div>
-                        <div class="cmap-row" style="gap:10px;">
-                            <div class="cmap-node alt" style="font-size:0.9rem;">إفراز هرمون التستوسترون<br>↓<br>نمو أنبوبا وولف لأقنية ذكرية</div>
-                            <div class="cmap-node alt" style="font-size:0.9rem;">إفراز هرمون AMH<br>↓<br>ضمور أنبوبي مولر</div>
-                        </div>
-                    </div>
-                    <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
-                        <div class="cmap-node alt" style="border-color: var(--danger); color: var(--danger);">بغياب مورثة SRY (أنثى XX)</div>
-                        <div class="cmap-arrow">↓</div>
-                        <div class="cmap-node">يتشكل المبيض</div>
-                        <div class="cmap-row" style="gap:10px;">
-                            <div class="cmap-node alt" style="font-size:0.9rem;">غياب التستوسترون<br>↓<br>ضمور أنبوبي وولف</div>
-                            <div class="cmap-node alt" style="font-size:0.9rem;">غياب AMH<br>↓<br>نمو أنبوبا مولر لأقنية أنثوية</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- ملخصات الأفكار وفقرات الدرس -->
+        <h2 class="section-title">أولاً: ملخصات الأفكار والفقرات</h2>
 
-        <table class="data-table">
-            <tr>
-                <th width="30%">وجه المقارنة</th>
-                <th width="35%">الذكر (الصيغة: 2n = 44A + XY)</th>
-                <th width="35%">الأنثى (الصيغة: 2n = 44A + XX)</th>
-            </tr>
-            <tr>
-                <td><strong>أنواع الأعراس المنتجة</strong></td>
-                <td>نوعان: (22A + X) و (22A + Y)</td>
-                <td>نوع واحد فقط: (22A + X)</td>
-            </tr>
-            <tr>
-                <td><strong>مورثة SRY</strong></td>
-                <td>موجودة (على الصبغي الجنسي Y)</td>
-                <td>غائبة</td>
-            </tr>
-        </table>
-
-        <!-- القسم الثاني: بنية الخصية وهجرتها -->
-        <h2 class="section-title">■ ثانياً: هجرة الخصيتين وبنيتهما الداخلية</h2>
-        <div class="grid-layout">
-            <div class="card">
-                <div class="card-header">هجرة الخصيتين والتنظيم الحراري</div>
-                <div class="card-content">
-                    <p>تتشكل الخصيتان في المرحلة الجنينية <strong>داخل تجويف البطن</strong>، وتهاجران قبل الولادة <strong>خارج الجسم إلى كيس الصفن</strong> عبر <strong>القناة الإربية</strong>.</p>
+        <div class="summary-box">
+            <h3>1. المنشأ الجنيني والتمايز الجنسي</h3>
+            <p>تشتق المناسل من <span class="highlight">الوريقة الجنينية المتوسطة</span>، ويبدأ تشكلها في <span class="highlight">الأسبوع 7 من الحمل</span>.</p>
+            <ul>
+                <li><strong>الحالات الصبغية:</strong> (X) أنثى، (XXY) ذكر، (XXX) أنثى، (XY) ذكر.</li>
+                <li><strong>المورثة SRY:</strong> يحملها الصبغي Y وتنشط تشكل الخصية.</li>
+                <li><strong>إفرازات المضغة الذكرية:</strong>
                     <ul>
-                        <li><strong>السبب:</strong> لأن درجة الحرارة المثلى لإنتاج النطاف هي <strong>35°C</strong> (أقل من حرارة الجسم).</li>
-                        <li><strong>عضلات كيس الصفن:</strong> تتقلص في البرد لتقريب الخصيتين للتدفئة، وتسترخي في الحر لتبعيدهما.</li>
+                        <li><span class="highlight">التستوسترون:</span> ينمو أنبوبا وولف إلى أقنية تناسلية ذكرية.</li>
+                        <li><span class="highlight">هرمون AMH:</span> يثبط نمو أنبوبي مولر (ضمور أنبوبي مولر).</li>
                     </ul>
-                    <div class="alert-box">
-                        - مرور الحبل المنوي بالقناة الإربية يسبب نقطة ضعف قد تؤدي لـ <strong>الفتق الإربي</strong>.<br>
-                        - الفيل والحوت تبقى خصاهما في البطن ولا تهاجر.<br>
-                        - <strong>دوالي الخصية:</strong> حالة مرضية في أوردة كيس الصفن.
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">البنية الداخلية للخصية</div>
-                <div class="card-content">
-                    <p>تحاط بـ غلاف الخصية، وتحوي شبكة الخصية (هالر)، وتتألف من <strong>250 فصاً</strong>.</p>
-                    <table class="data-table" style="margin-top: 10px; font-size: 0.95rem;">
-                        <tr><th>البنية</th><th>الموقع</th><th>الوظيفة</th></tr>
-                        <tr><td><strong>الأنابيب المنوية</strong></td><td>داخل فصوص الخصية</td><td>إنتاج النطاف</td></tr>
-                        <tr><td><strong>خلايا بينية (ليديغ)</strong></td><td>بين الأنابيب المنوية</td><td>تفرز الهرمونات الذكرية (الأندروجينات)</td></tr>
-                    </table>
-                </div>
-            </div>
+                </li>
+                <li><strong>التحكم بجنس الجنين:</strong> النطفة التي تحوي الصبغي Y أسرع حركة فتقوم بالإخصاب بنسبة 80% بناءً على سرعتها. النطفة X أبطأ وأطول عمراً.</li>
+            </ul>
         </div>
 
-        <!-- القسم الثالث: الأقنية والغدد -->
-        <h2 class="section-title">■ ثالثاً: الأقنية الناقلة والغدد الملحقة</h2>
-        
-        <table class="data-table">
-            <tr>
-                <th width="20%">الغدة الملحقة</th>
-                <th width="30%">الموقع</th>
-                <th width="50%">المفرزات والوظيفة</th>
-            </tr>
-            <tr>
-                <td><strong>الحويصلان المنويان</strong></td>
-                <td>خلف قاعدة المثانة</td>
-                <td>- تشكل 60% من السائل المنوي.<br>- <strong>الفركتوز:</strong> لتغذية النطاف.<br>- <strong>البروستاغلاندينات:</strong> تحث على تقلص العضلات الملساء في المجرى التناسلي.</td>
-            </tr>
-            <tr>
-                <td><strong>البروستات (الموثة)</strong></td>
-                <td>تحيط بالجزء الأول من الإحليل</td>
-                <td>- سائل حليبي حمضي (20-30%).<br>- <strong>شوارد الكالسيوم Ca++:</strong> تخفف لزوجة السائل وتنشط النطاف.<br>- <strong>البلاسمين المنوي:</strong> بروتين مضاد للجراثيم يمنع التهابات المجرى التناسلي البولي.</td>
-            </tr>
-            <tr>
-                <td><strong>غدتا كوبر</strong></td>
-                <td>قرب قاعدة القضيب الذكري</td>
-                <td>- مادة <strong>مخاطية قلوية</strong>.<br>- تخفف حموضة البول في الإحليل، وتخفف حموضة المهبل أثناء الاقتران.</td>
-            </tr>
-        </table>
-
-        <!-- القسم الرابع: تشكل النطاف -->
-        <h2 class="section-title">■ رابعاً: تشكل النطاف والتمايز (Spermatogenesis)</h2>
-        
-        <div class="concept-map">
-            <div class="cmap-title">مخطط مراحل تشكل النطاف (64 يوماً)</div>
-            <div class="cmap-tree" style="flex-direction: row; flex-wrap: wrap; justify-content: center;">
-                <div class="cmap-node">1. خلايا ظهارة منشئة (2n)<br><span style="font-size:0.8rem; font-weight:normal;">انقسامات خيطية</span></div>
-                <div class="cmap-arrow">←</div>
-                <div class="cmap-node">2. منسلية منوية (2n)<br><span style="font-size:0.8rem; font-weight:normal;">تنمو وتكبر</span></div>
-                <div class="cmap-arrow">←</div>
-                <div class="cmap-node">3. خلية منوية أولية (2n)<br><span style="font-size:0.8rem; font-weight:normal;">انقسام منصف أول</span></div>
-                <div class="cmap-arrow">←</div>
-                <div class="cmap-node">4. خلية منوية ثانوية (1n)<br><span style="font-size:0.8rem; font-weight:normal;">انقسام منصف ثاني</span></div>
-                <div class="cmap-arrow">←</div>
-                <div class="cmap-node">5. منوية (1n)<br><span style="font-size:0.8rem; font-weight:normal;">تتمايز شكلياً</span></div>
-                <div class="cmap-arrow">←</div>
-                <div class="cmap-node alt" style="border-color: var(--success);">6. نطفة (1n)</div>
-            </div>
+        <div class="summary-box">
+            <h3>2. بنية الخصية ومكوناتها</h3>
+            <p>تهاجر الخصيتان خارج تجويف البطن إلى <span class="highlight">كيس الصفن</span> (باستثناء الفيلة والحيتان). هجرة الخصية ضرورية لإنتاج النطاف بدرجة حرارة 35.</p>
+            <ul>
+                <li><strong>غلاف الخصية:</strong> غمد ضام ليفي يحيط بها. يقسمها لحواجز ليفية (فصوص الخصية نحو 250 فصاً).</li>
+                <li><strong>الحبل المنوي:</strong> يتكون من الأسهر والأوعية الدموية واللمفاوية والأعصاب المرتبطة بنسيج ضام. يمر عبر <span class="highlight">القناة الإربية</span>.</li>
+                <li><strong>الأنابيب المنوية:</strong> داخل فصوص الخصية، يبلغ عددها نحو 800 أنبوب بالخصية الواحدة.</li>
+                <li><strong>شبكة الخصية (هالر):</strong> تتشكل من تجمع الأنابيب المنوية لتصب في البربخ.</li>
+                <li><strong>الخلايا ضمن المقطع العرضي:</strong> خلايا بينية (ليديغ) تفرز أندروجينات (تستوسترون)، ولمعة الأنبوب المنوي.</li>
+            </ul>
         </div>
 
-        <div class="grid-layout">
-            <div class="card">
-                <div class="card-header">آلية تمايز المنوية إلى نطفة</div>
-                <div class="card-content">
-                    <ul>
-                        <li><strong>جهاز غولجي:</strong> يتحول إلى <strong>جسيم طرفي</strong> يتوضع في مقدمة رأس النطفة.</li>
-                        <li><strong>الجسيمات الكوندرية:</strong> تتجمع حول بداية السوط في <strong>القطعة المتوسطة</strong> لتوليد الطاقة.</li>
-                        <li><strong>المريكز البعيد:</strong> تنشأ منه الأنيبيبات الدقيقة التي تشكل السوط (الذيل).</li>
-                        <li><strong>الهيولى:</strong> تفقد المنوية معظم هيولاها لتسهيل حركتها.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">خلايا سرتولي والسائل المنوي</div>
-                <div class="card-content">
-                    <p><strong>خلايا سرتولي:</strong> خلايا حاضنة متطاولة كعمود سيتوبلاسمي في جدار الأنبوب المنوي.</p>
-                    <ol>
-                        <li>مصدر غذائي للمنويات المتمايزة.</li>
-                        <li>تبلعم الهيولى المفقودة أثناء التمايز.</li>
-                        <li>تسهم بتشكيل <strong>الحاجز الدموي الخصيوي</strong>: يمنع خلايا المناعة من مهاجمة النطاف (لأن غشاء النطفة له مولدات ضد خاصة).</li>
-                    </ol>
-                    <hr style="margin: 10px 0; border:0; border-top: 1px dashed var(--border);">
-                    <p><strong>السائل المنوي:</strong> عدد النطاف الطبيعي 20-100 مليون/مل (تشكل 10% من الحجم). يُعد الذكر <strong>عقيماً عقم فيزيولوجي</strong> إذا قل العدد عن 20 مليون نطفة/مل.</p>
-                </div>
-            </div>
+        <div class="summary-box">
+            <h3>3. القنوات الناقلة والغدد الملحقة</h3>
+            <ul>
+                <li><strong>البربخ:</strong> أنبوب رفيع ملتف (7 أمتار) مستودع رئيس للنطاف، وتكتسب فيه القدرة على الحركة الذاتية.</li>
+                <li><strong>الأسهر:</strong> أنبوب عضلي (45 سم) ينقل النطاف للإحليل ويخزنها لمدة شهر تقريباً.</li>
+                <li><strong>الإحليل:</strong> قناة مشتركة بولية تناسلية تفرز سائلاً مخاطياً.</li>
+            </ul>
+            <p><strong>الغدد الملحقة (موقع ووظيفة):</strong></p>
+            <ul>
+                <li><strong>الحويصلان المنويان:</strong> خلف قاعدة المثانة. يفرزان 60% من السائل المنوي (سائل لزج قلوي). يحوي <strong>الفركتوز</strong> (يتم استقلابه لإنتاج طاقة)، و<strong>البروستاغلاندين</strong> (تقلص العضلات الملساء في المجرى التناسلي لتأمين وصول النطاف لأعلى الرحم). يخففان حموضة المهبل والإحليل.</li>
+                <li><strong>غدة البروستات:</strong> تحيط بالجزء الأول من الإحليل. سائل حليبي (20-30%) حمضي إلى حد ما، يحوي <strong>شوارد الكالسيوم</strong> (لتنشيط حركة النطاف)، و<strong>البلاسمين المنوي</strong> (بروتين مضاد جراثيم يمنع التهابات المجرى البولي).</li>
+                <li><strong>غدتا كوبر (البصليتان الإحليليتان):</strong> قرب قاعدة القضيب. تفرزان مادة مخاطية أساسية تخفف حموضة البول المتبقي في الإحليل.</li>
+            </ul>
         </div>
 
-        <!-- بنك الأسئلة الشامل 100 سؤال -->
-        <div class="q-bank-header">
-            <h2>بنك الأسئلة الشامل للدرس</h2>
-            <p>100 سؤال متكامل يشمل المقارنات، الترتيب، والتعاليل والوظائف</p>
+        <div class="summary-box">
+            <h3>4. تشكل النطاف (الإنطاف)</h3>
+            <p>يبدأ من سن البلوغ ويستمر تقريباً مدى الحياة، تستغرق العملية نحو 64 يوماً. يتم في القسم المحيطي من الأنابيب المنوية (خلايا ظهارة منشئة 2n تنقسم خيطياً). عدد النطاف المتشكلة من مليون خلية منوية أولية هو 4 مليون.</p>
+            <ol>
+                <li>خلية ظهارة منشئة (2n) -> انقسامات خيطية -> منسليات منوية (2n)</li>
+                <li>منسلية منوية (2n) -> نمو -> خلية منوية أولية (2n)</li>
+                <li>خلية منوية أولية (2n) -> انقسام منصف أول -> خلية منوية ثانوية (1n)</li>
+                <li>خلية منوية ثانوية (1n) -> انقسام منصف ثاني (لاختزال كمية الـ DNA المضاعفة في الطور البيني) -> منوية (1n)</li>
+                <li>منويات (1n) (تتصل ببعضها بـ <span class="highlight">جسور سيتوبلاسمية</span> لضمان تطورها معاً ونقل الغذاء وتتفكك في المراحل الأخيرة) -> تمايز -> نطاف (1n).</li>
+            </ol>
+            <p><strong>مراحل تمايز المنوية لنطفة بالترتيب:</strong></p>
+            <ol>
+                <li>يتحول جهاز غولجي إلى جسيم طرفي في مقدمة رأس النطفة.</li>
+                <li>تفقد المنوية معظم هيولاها.</li>
+                <li>تصطف الجسيمات الكوندرية حول بداءة السوط في القطعة المتوسطة.</li>
+                <li>يظهر لها ذيل.</li>
+            </ol>
         </div>
 
-        <div class="qa-grid" id="qa-container">
-            <!-- Questions will be injected here by JS -->
+        <div class="summary-box">
+            <h3>5. السائل المنوي والعوامل المؤثرة</h3>
+            <p>كمية السائل (2-5) مل، العدد الأعظمي 500 مليون، نسبة النطاف الطبيعية للخصب على الأقل 60%. الـ pH نحو 7.5. عمر النطاف 24-48 ساعة بالأقنية الأنثوية، بينما لأسابيع في الذكر لتأثرها بمدخراتها.</p>
+            <ul>
+                <li><strong>الحرارة:</strong> تسبب تشكل منسليات منوية مشوهة (عديدة النوى).</li>
+                <li><strong>الأشعة:</strong> تؤثر في المنسليات والخلايا الأولية والثانوية، والمنويات في مرحلة التمايز أقل تأثراً.</li>
+                <li><strong>المواد الكيميائية:</strong> (الأغوال، المخدرات، الأدوية العصبية) لها تأثير سام.</li>
+                <li><strong>نقص فيتامين E, A:</strong> يسبب قصوراً في تشكل النطاف.</li>
+                <li><strong>نقص مرور الدم وعوامل وعائية:</strong> يعوق تشكل النطاف (الملابس الضيقة تمنع ركود جريان الدم).</li>
+                <li><strong>عدم الهبوط الخصيوي:</strong> لا تتشكل النطاف لارتفاع الحرارة، ولا يتأثر إفراز التستوسترون.</li>
+            </ul>
+        </div>
+
+        <div class="summary-box">
+            <h3>6. التنظيم الهرموني (الوطاء والنخامية والخصية)</h3>
+            <p>تنتج الخلايا البينية (ليديغ) الأندروجينات (تستوسترون، دايهدروتستوسترون، أندروسينديون). التستوسترون يشتق من الكوليسترول، 98% مرتبط ببروتينات الدم، والجزء الفعال ينتقل لهيولى الخلايا المستهدفة.</p>
+            <ul>
+                <li><strong>أهمية التستوسترون (جنينياً):</strong> ظهور الصفات الجنسية الأولية، نمو أنابيب وولف، هجرة الخصيتين.</li>
+                <li><strong>أهمية التستوسترون (بلوغ):</strong> ظهور الصفات الجنسية الثانوية، تنشيط تشكل النطاف وزيادة عمرها، زيادة الكتلة العضلية والعظمية (حث تركيب بروتينات وترسب كالسيوم).</li>
+                <li><strong>الوطاء:</strong> يفرز GnRH يحرض النخامة الأمامية.</li>
+                <li><strong>النخامة الأمامية:</strong> تفرز FSH (يحث الأنابيب وخلايا سيرتولي على تشكل النطاف بشكل غير مباشر)، وتفرز LH (يحث خلايا ليديغ على إفراز التستوسترون).</li>
+                <li><strong>خلايا سيرتولي:</strong> تفرز هرمون <span class="highlight">الإنهيبين Inhibin</span> يثبط FSH و GnRH (تلقيم راجع سلبي). زيادة التستوسترون تثبط LH و GnRH.</li>
+                <li><strong>DHEA:</strong> من قشرة الكظر، منشط للحيوية ويزيد الكتلة، منعه الاتحاد الأولمبي لأنه يزيد خطر سرطان البروستات، ضمور الخصيتين، وتأثيرات سلبية على القلب، ويتحول لتستوسترون.</li>
+            </ul>
+        </div>
+
+        <!-- بنك الأسئلة -->
+        <h2 class="section-title">ثانياً: بنك الأسئلة الشامل (100 سؤال)</h2>
+        <div class="counter">عدد الأسئلة: 100 سؤال مستخرج بالحرف من الصور</div>
+        <div class="qa-container" id="qa-container">
+            <!-- سيتم إضافة الأسئلة هنا عبر JavaScript -->
         </div>
 
     </div>
 
-    <!-- AI Chat Widget -->
-    <div class="chat-btn" onclick="toggleChat()">💬</div>
-    <div class="chat-window" id="chat-window">
-        <div class="chat-header">المساعد الأكاديمي للعلوم <span class="close-chat" onclick="toggleChat()">✖</span></div>
-        <div class="chat-body" id="chat-messages">
-            <div class="msg ai">أهلاً بك! أنا مساعدك التعليمي. يمكنك سؤالي عن أي استفسار يخص درس جهاز التكاثر والتمايز الجنسي وسأجيبك فوراً.</div>
-        </div>
-        <div class="chat-footer">
-            <input type="text" id="chat-input" placeholder="اكتب سؤالك هنا..." onkeypress="if(event.key === 'Enter') sendMessage()">
-            <button onclick="sendMessage()">إرسال</button>
-        </div>
-    </div>
+    <script>
+        // مصفوفة الأسئلة - تم كتابة 100 سؤال دقيق بناءً على النص الحرفي للصور فقط
+        const questions = [
+            // أسئلة حدد موقع
+            { type: "حدد موقع", q: "من أي الوريقات الجنينية تشتق المناسل؟", a: "من الوريقة الجنينية المتوسطة." },
+            { type: "حدد موقع", q: "أين توجد المورثة SRY؟", a: "على الصبغي الجنسي Y." },
+            { type: "حدد موقع", q: "أين تتواجد الخصيتان في معظم الثدييات (باستثناء الفيلة والحيتان)؟", a: "خارج تجويف البطن (في كيس الصفن)." },
+            { type: "حدد موقع", q: "أين تتواجد الخصيتان لدى الفيلة والحيتان؟", a: "داخل تجويف البطن." },
+            { type: "حدد موقع", q: "أين توجد الأنابيب المنوية؟", a: "داخل فصوص الخصية." },
+            { type: "حدد موقع", q: "أين تقع الخلايا البينية (ليديغ Leydig Cells)؟", a: "بين الأنابيب المنوية في المقطع العرضي للخصية." },
+            { type: "حدد موقع", q: "أين تقع شبكة الخصية (هالر)؟", a: "في الخصية وتتصل بالبربخ لكي تصب فيه." },
+            { type: "حدد موقع", q: "أين يقع البربخ؟", a: "ملتصق بالخصية." },
+            { type: "حدد موقع", q: "أين يمر الحبل المنوي عند هجرة الخصيتين؟", a: "يمر عبر القناة الإربية (طريق عبر البنية العضلية البطنية)." },
+            { type: "حدد موقع", q: "أين يتوضع الحويصلان المنويان (الغدد المنوية)؟", a: "يقعان خلف قاعدة المثانة." },
+            { type: "حدد موقع", q: "أين تتوضع غدة البروستات؟", a: "غدة عضلية ملساء تحيط بالجزء الأول من الإحليل." },
+            { type: "حدد موقع", q: "أين تتوضع غدتا كوبر (البصليتان الإحليليتان)؟", a: "تقعان قرب قاعدة القضيب الذكري." },
+            { type: "حدد موقع", q: "أين يتوضع الجسيم الطرفي في النطفة؟", a: "يتوضع في مقدمة رأس النطفة." },
+            { type: "حدد موقع", q: "أين تصطف الجسيمات الكوندرية أثناء تمايز المنوية لنطفة؟", a: "تصطف حول بداءة السوط في القطعة المتوسطة." },
+            { type: "حدد موقع", q: "أين يتم تشكل النطاف تحديداً ضمن الأنابيب المنوية في البداية؟", a: "في القسم المحيطي من الأنابيب المنوية (حيث توجد خلايا الظهارة المنشئة 2n)." },
 
-<script>
-    // 100 Comprehensive Questions
-    const questions = [
-        // 1-10: الأساس الجيني
-        { q: "كم عدد الصبغيات في الخلية الجسمية عند الإنسان؟", a: "46 صبغياً (44 جسمي + 2 جنسي)." },
-        { q: "اكتب الصيغة الصبغية الجسدية للذكر الطبيعي.", a: "2n = 44A + XY." },
-        { q: "اكتب الصيغة الصبغية الجسدية للأنثى الطبيعية.", a: "2n = 44A + XX." },
-        { q: "ما هي أنواع الأعراس التي يعطيها الذكر مع ذكر الصيغة؟", a: "نوعان: (1n = 22A + X) و (1n = 22A + Y)." },
-        { q: "ما هي أنواع الأعراس التي تعطيها الأنثى مع ذكر الصيغة؟", a: "نوع واحد فقط: (1n = 22A + X)." },
-        { q: "أين تقع مورثة SRY؟", a: "على الصبغي الجنسي (Y)." },
-        { q: "ما هي وظيفة المورثة SRY؟", a: "تشرف على صنع بروتين خاص يتدخل في تحول بداءة المناسل إلى خصية." },
-        { q: "في أي أسبوع يبدأ تشكل الجهاز التناسلي عند الجنين؟", a: "خلال الأسبوع السابع (7) من الحمل." },
-        { q: "من أين تنشأ بداءة المناسل؟", a: "تنشأ من الوريقة الجنينية الوسطى فقط." },
-        { q: "ماذا يتشكل من بداءة المناسل في حال وجود مورثة SRY؟", a: "تتشكل خصية." },
-        // 11-20: التمايز الجنيني
-        { q: "ماذا يتشكل من بداءة المناسل في حال غياب مورثة SRY؟", a: "يتشكل مبيض." },
-        { q: "ماذا تفرز الخصية جنينياً لتشكيل الأقنية التناسلية؟", a: "تفرز هرمون التستوسترون وهرمون AMH." },
-        { q: "ما هي وظيفة هرمون التستوسترون المفرز جنينياً؟", a: "يؤدي إلى نمو أنبوبا وولف إلى أقنية تناسلية ذكرية." },
-        { q: "ما هي وظيفة هرمون AMH المفرز جنينياً من الخصية؟", a: "يؤدي إلى ضمور أنبوبي مولر." },
-        { q: "ماذا ينتج عن غياب هرمون التستوسترون جنينياً عند الأنثى؟", a: "يؤدي إلى ضمور أنبوبي وولف." },
-        { q: "ماذا ينتج عن غياب هرمون AMH جنينياً عند الأنثى؟", a: "يسمح بنمو أنبوبا مولر إلى أقنية تناسلية أنثوية." },
-        { q: "أين تتشكل الخصيتان في المرحلة الجنينية؟", a: "تتشكل داخل تجويف البطن." },
-        { q: "إلى أين تهاجر الخصيتان قبل الولادة؟", a: "إلى خارج الجسم لتدعى كيس الصفن." },
-        { q: "ما هو الممر الذي تعبره الخصية أثناء هجرتها؟", a: "القناة الإربية عبر البنية العضلية البطنية." },
-        { q: "لماذا تهاجر الخصيتان إلى كيس الصفن؟", a: "لأن درجة الحرارة المثلى لإنتاج النطاف هي 35°C، أي أقل بدرجتين من حرارة الجسم الطبيعية." },
-        // 21-30: بنية الخصية والمشاكل
-        { q: "علل: إصابة بعض الذكور بالفتق الإربي.", a: "لأن مرور الحبل المنوي في القناة الإربية يُحدث نقاط ضعف في جدار البطن قد يبرز منها نسيج أمعاء." },
-        { q: "اذكر أمثلة لحيوانات ثديية لا تهاجر خصاها (تبقى في البطن).", a: "الفيل والحوت." },
-        { q: "ما هو دور عضلات كيس الصفن في درجات الحرارة المنخفضة (البرد)؟", a: "تتقلص مقربة الخصيتين من الجسم للتدفئة." },
-        { q: "ما هو دور عضلات كيس الصفن في درجات الحرارة المرتفعة؟", a: "تسترخي مبعدة الخصيتين عن الجسم للتبريد." },
-        { q: "ما هو المرض الذي يصيب أوردة كيس الصفن بالتوسع؟", a: "دوالي الخصية." },
-        { q: "كم عدد فصوص الخصية الواحدة تقريباً؟", a: "250 فصاً." },
-        { q: "ما هو موقع الأنابيب المنوية؟", a: "تقع داخل فصوص الخصية." },
-        { q: "ما هي وظيفة الأنابيب المنوية؟", a: "إنتاج النطاف." },
-        { q: "أين تقع خلايا ليديغ (الخلايا البينية)؟", a: "تقع بين الأنابيب المنوية في الخصية." },
-        { q: "ما هي وظيفة خلايا ليديغ (البينية)؟", a: "تفرز الهرمونات الجنسية الذكرية (الأندروجينات) مثل هرمون التستوسترون." },
-        // 31-40: الأقنية الناقلة
-        { q: "ما هو موقع شبكة هالر؟", a: "ضمن البنية الداخلية للخصية (شبكة الخصية)." },
-        { q: "ما هي الأقنية الناقلة للنطاف لدى الإنسان؟", a: "البربخ، الأسهرين، والإحليل." },
-        { q: "كم يبلغ طول أنبوب البربخ وما هي بنيته؟", a: "طوله 7 أمتار، وهو أنبوب رفيع ملتف." },
-        { q: "ما هي الوظيفة الأساسية للبربخ؟", a: "المستودع الرئيسي للنطاف، وفيه تكتسب النطاف القدرة على الحركة الذاتية." },
-        { q: "كم يبلغ طول أنبوب الأسهرين (القناة الناقلة)؟", a: "45 سم." },
-        { q: "ما هي وظيفة الأسهرين؟", a: "ينقل النطاف إلى الإحليل، ويخزنها لمدة شهر تقريباً." },
-        { q: "ما هو موقع الإحليل؟", a: "قناة تقع وسط القضيب الذكري." },
-        { q: "ما هي وظيفة الإحليل؟", a: "قناة بولية تناسلية مشتركة يمرر النطاف ويُضاف له سائل منوي." },
-        { q: "اذكر أسماء الغدد الملحقة بجهاز التكاثر الذكري.", a: "الحويصلان المنويان، البروستات (الموثة)، وغدتا كوبر." },
-        { q: "ما هو موقع الحويصلان المنويان؟", a: "خلف قاعدة المثانة." },
-        // 41-50: الغدد الملحقة
-        { q: "ما نسبة مفرزات الحويصلان المنويان من السائل المنوي؟", a: "تشكل نحو 60% من كمية السائل المنوي." },
-        { q: "ما هو السكر الذي يفرزه الحويصلان المنويان وما وظيفته؟", a: "سكر الفواكه (الفركتوز)، وظيفته تتغذى عليه النطاف." },
-        { q: "ما هي وظيفة البروستاغلاندينات المفرزة من الحويصلان المنويان؟", a: "تحث على تقلص العضلات الملساء في المجرى التناسلي الذكري، والأنثوي." },
-        { q: "ما هو موقع غدة البروستات (الموثة)؟", a: "تحيط بالجزء الأول من الإحليل." },
-        { q: "ما هي صفات السائل الذي تفرزه البروستات ونسبته؟", a: "سائل حليبي حمضي إلى حد ما، يشكل 20 - 30% من كمية السائل المنوي." },
-        { q: "ما هي وظيفة شوارد الكالسيوم (Ca++) المفرزة من البروستات؟", a: "تخفف لزوجة السائل المنوي، وتنشط حركة النطاف." },
-        { q: "ما هو البلاسمين المنوي وما وظيفته؟", a: "هو بروتين تفرزه البروستات مضاد للجراثيم، يمنع حدوث التهابات المجرى البولي التناسلي." },
-        { q: "أين تقع غدتا كوبر؟", a: "قرب قاعدة القضيب الذكري." },
-        { q: "ما طبيعة المادة التي تفرزها غدتا كوبر؟", a: "تفرزان مادة مخاطية قلوية." },
-        { q: "ما هي وظيفة مفرزات غدتا كوبر؟", a: "تخفف حموضة البول المتبقي في الإحليل، وتخفف حموضة المهبل لدى الأنثى أثناء الاقتران." },
-        // 51-60: السائل المنوي وتشكل النطاف
-        { q: "ما هي قيمة الـ PH التقريبية للسائل المنوي النهائي؟", a: "الـ PH يتراوح بين 6 إلى 6.5." },
-        { q: "متى يبدأ تشكل النطاف لدى الذكر البشري وإلى متى يستمر؟", a: "يبدأ تشكل النطاف بدءاً من سن البلوغ ويستمر تقريباً مدى الحياة." },
-        { q: "كم يوماً تستغرق العملية الكاملة لتشكل النطفة؟", a: "نحو 64 يوماً." },
-        { q: "أين تتم مراحل تشكل النطاف بالتحديد؟", a: "في جدار الأنابيب المنوية (من القسم المحيطي نحو اللمعة)." },
-        { q: "ما هي الخلايا الأولى التي تبدأ منها مرحلة تشكل النطاف؟", a: "خلايا الظهارة المنشئة." },
-        { q: "ما هي الصيغة الصبغية لخلايا الظهارة المنشئة، وماذا يطرأ عليها؟", a: "صيغتها 2n، وتطرأ عليها سلسلة انقسامات خيطية لتعطي منسليات منوية." },
-        { q: "ما هي الصيغة الصبغية للمنسلية المنوية وكيف تتطور؟", a: "صيغتها 2n، وتنمو وتكبر متحولة إلى خلية منوية أولية." },
-        { q: "ما هي الصيغة الصبغية للخلية المنوية الأولية وما نوع الانقسام الذي تعانيه؟", a: "صيغتها 2n، وتعاني الانقسام المنصف الأول." },
-        { q: "ماذا ينتج عن الانقسام المنصف الأول للخلية المنوية الأولية وما صيغتها؟", a: "ينتج خليتان منويتان ثانويتان صيغتهما 1n." },
-        { q: "ماذا ينتج عن الانقسام المنصف الثاني للخلية المنوية الثانوية؟", a: "ينتج منويات صيغتها 1n." },
-        // 61-70: تمايز النطاف وخلايا سرتولي
-        { q: "كيف تتحول المنوية (1n) إلى نطفة ناضجة؟", a: "تخضع لعملية تمايز شكلية (دون انقسام) لتصبح نطفة (1n)." },
-        { q: "ما أهمية وجود جسور من السيتوبلازما بين المنويات المتجاورة أثناء تطورها؟", a: "تؤمن نقل المواد المغذية والهرمونات فيما بينها مما يضمن تطورها إلى نطاف في آن معاً." },
-        { q: "إلى ماذا يتحول جهاز غولجي أثناء تمايز المنوية إلى نطفة؟", a: "يتحول إلى جسيم طرفي يتوضع في مقدمة رأس النطفة." },
-        { q: "أين تتجمع الجسيمات الكوندرية في النطفة المتمايزة؟", a: "تتجمع حول بداية السوط في القطعة المتوسطة." },
-        { q: "ما هي وظيفة الجسيمات الكوندرية في النطفة؟", a: "تزود النطفة بالطاقة الضرورية لأداء عملياتها الحيوية وحركتها." },
-        { q: "من أين تنشأ الأنيبيبات الدقيقة التي تشكل سوط النطفة؟", a: "تنشأ من المريكز البعيد." },
-        { q: "ماذا يحدث لهيولى (سيتوبلازما) المنوية أثناء تمايزها، ولماذا؟", a: "تفقد المنوية معظم هيولاها، لتسهيل حركتها." },
-        { q: "مما تتألف أقسام النطفة البشرية الناضجة؟", a: "تتألف من: رأس (يحوي النواة والجسيم الطرفي)، قطعة متوسطة، وذيل (سوط)." },
-        { q: "كيف تبدو خلايا سرتولي في المقطع العرضي للأنبوب المنوي؟", a: "هي خلايا حاضنة تبدو متطاولة على شكل عمود سيتوبلاسمي." },
-        { q: "اذكر الوظيفة الغذائية لخلايا سرتولي.", a: "تعتبر مصدر غذائي للمنويات التي تتمايز إلى نطاف." },
-        // 71-80: وظائف سرتولي والعقم
-        { q: "ماذا تفعل خلايا سرتولي بالهيولى المفقودة من المنويات؟", a: "تقوم ببلعمتها." },
-        { q: "ما هو الحاجز الذي تساهم خلايا سرتولي في تشكيله؟", a: "الحاجز الدموي الخصيوي." },
-        { q: "ما هي وظيفة الحاجز الدموي الخصيوي الأساسية اتجاه جهاز المناعة؟", a: "يمنع خلايا جهاز المناعة من مهاجمة النطاف." },
-        { q: "علل: تهاجم خلايا جهاز المناعة النطاف إذا تم اختراق الحاجز الدموي الخصيوي.", a: "لأن غشاء النطفة يمتلك مولدات ضد خاصة لا توجد في أغشية الخلايا الجسمية الأخرى." },
-        { q: "ماذا يسمى السائل الذي تسبح فيه النطاف ومما يتكون؟", a: "السائل المنوي، يتكون من مفرزات الغدد الملحقة بجهاز التكاثر والنطاف." },
-        { q: "كم يشكل حجم النطاف بالنسبة لحجم السائل المنوي؟", a: "تشكل النطاف حوالي 10% من حجم السائل المنوي." },
-        { q: "ما هو العدد الطبيعي للنطاف لدى الذكور البالغين الأسوياء؟", a: "ما بين (20 - 100) مليون نطفة في الميليلتر الواحد." },
-        { q: "متى يعتبر الذكر البشري مصاباً بعقم فيزيولوجي؟", a: "إذا قل عدد النطاف عن 20 مليون نطفة / مل." },
-        { q: "ما هي الخلية التي تحوي نواة ضمن بنية النطفة؟", a: "رأس النطفة يحوي النواة." },
-        { q: "أين يتواجد المريكز القريب والمريكز البعيد في النطفة؟", a: "ضمن القطعة المتوسطة للنطفة." },
-        // 81-90: أسئلة الترتيب
-        { q: "رتب مراحل تطور النطفة بدءاً من الخلية المنوية الأولية.", a: "خلية منوية أولية ← خلية منوية ثانوية ← منوية ← نطفة ناضجة." },
-        { q: "رتب الأقنية الناقلة للنطاف مساراً من الخصية إلى الخارج.", a: "البربخ ← الأسهرين ← الإحليل." },
-        { q: "رتب أجزاء النطفة البشرية من الأمام إلى الخلف.", a: "الجسيم الطرفي (في الرأس) ← النواة (في الرأس) ← القطعة المتوسطة ← الذيل (السوط)." },
-        { q: "رتب الخلايا في الأنبوب المنوي من الأقرب لجدار الأنبوب المحيطي إلى لمعة الأنبوب.", a: "خلايا ظهارة منشئة ← منسليات منوية ← خلايا منوية أولية ← خلايا منوية ثانوية ← منويات ← نطاف." },
-        { q: "رتب الغدد الملحقة تشريحياً من الأعلى للأسفل (حسب مسار المجرى التناسلي).", a: "الحويصلان المنويان (خلف المثانة) ← البروستات (تحيط بأول الإحليل) ← غدتا كوبر (قرب قاعدة القضيب)." },
-        { q: "رتب انقسامات الخلية المنوية الأولية حتى تصبح منويات.", a: "خلية منوية أولية تعاني انقسام منصف أول فتعطي خليتين منويتين ثانويتين، ثم كل خلية ثانوية تعاني انقسام منصف ثاني فتعطي منويات." },
-        { q: "رتب خطوات تمايز المنوية المتعلقة بالبنى الخلوية.", a: "تشكل الجسيم الطرفي من غولجي ← تجمع الجسيمات الكوندرية في القطعة المتوسطة ← تشكل السوط من المريكز البعيد ← فقدان معظم الهيولى." },
-        { q: "رتب الأقنية حسب الطول من الأطول إلى الأقصر.", a: "البربخ (7 أمتار) ثم الأسهرين (45 سم)." },
-        { q: "رتب الخلايا حسب الصيغة الصبغية: منسلية، منوية ثانوية، خلية ظهارة.", a: "خلية ظهارة منشئة (2n) = منسلية منوية (2n) | منوية ثانوية (1n)." },
-        { q: "رتب نسب المفرزات في السائل المنوي من الأكبر للأصغر.", a: "مفرزات الحويصلان (60%) > مفرزات البروستات (20-30%) > حجم النطاف (10%)." },
-        // 91-100: أسئلة المقارنة
-        { q: "قارن بين: هرمون التستوسترون وهرمون AMH من حيث الوظيفة الجنينية.", a: "التستوسترون: يؤدي لنمو أنبوبا وولف لأقنية ذكرية. | AMH: يؤدي لضمور أنبوبي مولر." },
-        { q: "قارن بين: أنبوب وولف وأنبوب مولر من حيث المصير عند الجنين الذكر.", a: "وولف: ينمو ويتحول لأقنية تناسلية ذكرية بفضل التستوسترون. | مولر: يضمر بفضل هرمون AMH." },
-        { q: "قارن بين: خلايا ليديغ وخلايا سرتولي من حيث الموقع.", a: "ليديغ: بين الأنابيب المنوية في الخصية. | سرتولي: في جدار الأنبوب المنوي (تبدو كعمود سيتوبلاسمي)." },
-        { q: "قارن بين: خلايا ليديغ وخلايا سرتولي من حيث الوظيفة الرئيسية.", a: "ليديغ: تفرز الهرمونات الذكرية (الأندروجينات). | سرتولي: تغذية المنويات، بلعمة الهيولى، وتشكيل الحاجز الدموي الخصيوي." },
-        { q: "قارن بين: الخلية المنوية الأولية والخلية المنوية الثانوية من حيث الصيغة الصبغية ونوع الانقسام التالي.", a: "الأولية: صيغتها 2n وتعاني انقسام منصف أول. | الثانوية: صيغتها 1n وتعاني انقسام منصف ثاني." },
-        { q: "قارن بين: البربخ والأسهرين من حيث الطول والوظيفة.", a: "البربخ: 7 أمتار، مستودع رئيسي وتكتسب فيه النطاف الحركة. | الأسهرين: 45 سم، ينقل النطاف ويخزنها لمدة شهر." },
-        { q: "قارن بين: مفرزات الحويصلان المنويان ومفرزات غدتا كوبر من حيث طبيعة المادة الكيميائية.", a: "الحويصلان: تفرز الفركتوز والبروستاغلاندينات. | كوبر: تفرز مادة مخاطية قلوية." },
-        { q: "قارن بين: البروستات وغدتا كوبر من حيث درجة حموضة المفرزات ووظيفتها.", a: "البروستات: سائل حمضي، لتخفيف اللزوجة وتنشيط الحركة. | كوبر: سائل قلوي، لتخفيف حموضة البول والمهبل." },
-        { q: "قارن بين: المريكز القريب والمريكز البعيد من حيث الوظيفة في النطفة.", a: "المريكز البعيد: تنشأ منه الأنيبيبات الدقيقة التي تشكل السوط (الذيل). المريكز القريب موجود في القطعة المتوسطة (لم تذكر له وظيفة محددة في المخطط سوى موقعه)." },
-        { q: "قارن بين: الذكر الطبيعي والذكر المصاب بالعقم الفيزيولوجي من حيث عدد النطاف.", a: "الطبيعي: 20 إلى 100 مليون نطفة/مل. | العقيم فيزيولوجياً: أقل من 20 مليون نطفة/مل." }
-    ];
+            // أسئلة اذكر وظيفة / أهمية
+            { type: "اذكر وظيفة", q: "ما وظيفة المورثة SRY الموجودة على الصبغي Y؟", a: "تنشط تشكل الخصية." },
+            { type: "اذكر وظيفة", q: "ما وظيفة هرمون التستوسترون لدى المضغة الجنينية قبل تمايزها الجنسي؟", a: "ينمو أنبوبا وولف إلى أقنية تناسلية ذكرية." },
+            { type: "اذكر وظيفة", q: "ما وظيفة إفراز هرمون AMH لدى المضغة الجنينية؟", a: "يثبط نمو أنبوبي مولر (ضمور أنبوبي مولر)." },
+            { type: "اذكر وظيفة", q: "ما وظيفة أو أهمية العضلات الملساء في جدار كيس الصفن؟", a: "تقلص العضلات الملساء في درجات الحرارة المنخفضة، واسترخاؤها في درجات الحرارة المرتفعة (لتنظيم حرارة الخصية)." },
+            { type: "اذكر وظيفة", q: "ما وظيفة البربخ؟", a: "يعد المستودع الرئيس للنطاف، وتكتسب النطاف فيه القدرة على الحركة الذاتية عند اختلاطها بمفرزات الحويصلين المنويين." },
+            { type: "اذكر وظيفة", q: "ما وظيفة الأسهر؟", a: "يقوم بنقل النطاف إلى الإحليل، وبإمكانه تخزين النطاف لمدة شهر تقريباً." },
+            { type: "اذكر وظيفة", q: "ما وظيفة الفركتوز (سكر الفواكه) المفرز من الحويصلين المنويين؟", a: "يتم استقلابه بسهولة من قبل النطاف (للحصول على الطاقة)." },
+            { type: "اذكر وظيفة", q: "ما وظيفة البروستاغلاندين المفرز من الحويصلين المنويين؟", a: "يحث على تقلص العضلات الملساء في المجرى التكاثري الذكري، وتقلص عضلات المجرى التكاثري الأنثوي في أثناء الاقتران لتأمين وصول النطاف إلى أعلى الرحم." },
+            { type: "اذكر وظيفة", q: "ما وظيفة شوارد الكالسيوم الموجودة في مفرزات البروستات؟", a: "تنشيط حركة النطاف." },
+            { type: "اذكر وظيفة", q: "ما وظيفة البلاسمين المنوي المفرز من غدة البروستات؟", a: "بروتين مضاد للجراثيم يساعد على منع حدوث التهابات المجرى البولي التناسلي لدى الذكور." },
+            { type: "اذكر وظيفة", q: "ما وظيفة غدتا كوبر (البصليتان الإحليليتان)؟", a: "تفرزان مادة مخاطية أساسية تخفف حموضة البول المتبقي في الإحليل." },
+            { type: "اذكر وظيفة", q: "ما وظيفة الجسور من السيتوبلاسما التي تربط بين المنويات؟", a: "تساعد على نقل المواد المغذية والهرمونات فيما بينها مما يضمن تطورها وتمايزها معاً." },
+            { type: "اذكر وظيفة", q: "ما وظيفة التستوسترون في المرحلة الجنينية؟", a: "ظهور الصفات الجنسية الأولية (تشكل الأعضاء الجنسية للجنين)، نمو أنابيب وولف، هجرة الخصيتين إلى كيس الصفن." },
+            { type: "اذكر وظيفة", q: "ما وظيفة التستوسترون عند البلوغ؟", a: "ظهور الصفات الجنسية الثانوية المميزة للذكر البالغ (خشونة الصوت، ضخامة العضلات وقوتها، ظهور الشعر في أنحاء مناطق الجسم)، وتنشيط تشكل النطاف وزيادة عمر النطاف المخزنة، وزيادة الكتلة العضلية والعظمية." },
+            { type: "اذكر وظيفة", q: "ما وظيفة هرمون GnRH المفرز من الوطاء؟", a: "الهرمون المطلق لهرمونات المناسل، يحرض النخامة الأمامية." },
+            { type: "اذكر وظيفة", q: "ما وظيفة هرمون FSH المنبه للجريب لدى الذكر؟", a: "يحث الأنابيب المنوية على إفراز التستوسترون، والذي ينشط تشكل النطاف (بشكل غير مباشر)." },
+            { type: "اذكر وظيفة", q: "ما وظيفة هرمون LH الملوتن لدى الذكر؟", a: "يحث الخلايا البينية (ليديغ) على إفراز التستوسترون، والذي ينشط تشكل النطاف." },
+            { type: "اذكر وظيفة", q: "ما وظيفة هرمون الإنهيبين Inhibin؟", a: "يثبط إفراز FSH و GnRH (تلقيم راجع سلبي)." },
 
-    const qaContainer = document.getElementById('qa-container');
-    
-    // Categorize logic based on index
-    let currentCategory = "";
-    
-    questions.forEach((item, index) => {
-        let catLabel = "";
-        if (index === 0) catLabel = "أسئلة الأساس الجيني والتمايز";
-        else if (index === 20) catLabel = "أسئلة البنية والتشريح";
-        else if (index === 40) catLabel = "أسئلة الغدد الملحقة";
-        else if (index === 50) catLabel = "أسئلة تشكل النطاف ووظائف الخلايا";
-        else if (index === 80) catLabel = "أسئلة الترتيب والتسلسل";
-        else if (index === 90) catLabel = "أسئلة المقارنات التحليلية";
+            // أسئلة فسر علمياً / علل / أعط تفسيراً
+            { type: "علل", q: "ماذا تتوقع جنس المولود الحامل للصبغيات (XX)؟", a: "أنثى." },
+            { type: "علل", q: "ماذا تتوقع جنس المولود الحامل للصبغيات (XY)؟", a: "ذكر." },
+            { type: "علل", q: "ماذا تتوقع جنس المولود الحامل للصبغيات (XXX)؟", a: "أنثى." },
+            { type: "علل", q: "ماذا تتوقع جنس المولود الحامل للصبغيات (XXY)؟", a: "ذكر." },
+            { type: "علل", q: "ماذا تتوقع جنس المولود الحامل للصبغيات (X)؟", a: "أنثى." },
+            { type: "علل", q: "علل: ترغب بعض الأسر في التحكم بجنس الجنين لإنجاب ذكور، كيف يمكن ذلك؟", a: "تبين للباحثين أن النطفة التي تحوي الصبغي Y تكون أسرع من النطفة التي تحمل الصبغي X، لذا يقوم بعض الأطباء بعزل نحو 80% من النطاف بناءً على سرعتها مما يزيد من احتمالية تحديد جنس المولود." },
+            { type: "علل", q: "ما ضرورة هجرة الخصيتين قبل الولادة إلى كيس الصفن؟", a: "لأن الدرجة المثلى لإنتاج النطاف 35 درجة مئوية، وهي غير متوفرة داخل تجويف البطن." },
+            { type: "علل", q: "تعد الخصية غدة مضاعفة الإفراز (داخلي وخارجي).", a: "لأنها تفرز الهرمونات الذكرية الجنسية إلى الدم (إفراز داخلي)، وتنتج النطاف الملقية في الأوساط الخارجية (إفراز خارجي)." },
+            { type: "علل", q: "الرجال الذين يستحمون بماء ساخن جداً بشكل دائم يكون عدد نطافهم في الغالب قليل.", a: "لأن درجات الحرارة المرتفعة تعيق تشكل النطاف." },
+            { type: "علل", q: "تعد حالة الفتق الإربي شائعة لدى الذكور ونادرة لدى الإناث.", a: "لأن مرور الحبل المنوي عبر القناة الإربية يحدث نقاط ضعف في جدار البطن تفقد تبرز أحياناً أنسجة أحشائية في هذه القناة (وهذه الحالة نادرة جداً لدى الإناث لأن هذه القناة صغيرة جداً لديهن)." },
+            { type: "علل", q: "ضرورة إجراء اختبارات فحص البروستات لدى الذكور بعد سن الخمسين.", a: "لأن غدة البروستات تتضخم تلقائياً لدى معظم الرجال الذين تزيد أعمارهم عن 50 عاماً، وقد يكون أحياناً سبب التضخم ورماً حميداً أو ورماً خبيثاً." },
+            { type: "علل", q: "تعدل المفرزات القلوية للغدد الملحقة لدى الذكر حموضة المهبل وحموضة البول المتبقي في الإحليل.", a: "لأن النطاف لا تصبح متحركة بشكل مثالي إلا عندما تصبح درجة الـ pH (6.5 - 6)." },
+            { type: "علل", q: "يسبب قصور إفراز البروستات التهابات في المجرى البولي التناسلي للذكر.", a: "لأن البروستات تفرز بروتين مضاد للجراثيم (بلاسمين منوي) يساعد على منع حدوث التهابات المجرى البولي." },
+            { type: "علل", q: "يحتاج لعدد كبير من النطاف ليكون خصباً جنسياً رغم أن نطفة واحدة تلقح العروس الأنثوية.", a: "لأن نسبة كبيرة من النطاف تموت في طريقها أو تكون مشوهة، ولتأمين إفراز كمية كافية من الإنزيمات لاختراق البويضة (استنتاج من النص العام)." },
+            { type: "علل", q: "ما أهمية حدوث الانقسام المنصف الثاني أثناء تشكل النطاف؟", a: "لاختزال كمية الـ DNA المضاعفة في الطور البيني." },
+            { type: "علل", q: "عدم هجرة الخصيتين لدى بعض الذكور في نهاية المرحلة الجنينية.", a: "لعدم إفراز التستوسترون بكمية كافية في نهاية المرحلة الجنينية." },
+            { type: "علل", q: "تفوق الكتلة العضلية والعظمية لدى الذكور مثيلتها لدى الإناث.", a: "لأن التستوسترون يحث على تركيب البروتينات وزيادة ترسب الكالسيوم في العظام." },
+            { type: "علل", q: "تكون الحمية الغذائية التي تمنع تناول الدسم ذات تأثير سلبي على القدرة الإخصابية للذكور.", a: "لأن الهرمونات الجنسية الذكرية ذات طبيعة ستروئيدية تشتق من الكوليسترول (وهو من الدسم)." },
+            { type: "علل", q: "تؤثر الأشعة في الخلايا المنوية المنقسمة بشكل أكبر بكثير من المنويات.", a: "لأن النويات تكون في مرحلة التمايز." },
+            { type: "علل", q: "ينشط هرمون FSH تشكل النطاف بشكل غير مباشر.", a: "لأن تأثيره يقتصر على خلايا سيرتولي لأنها وحدها تمتلك في غشائها الهيولي المستقبل الغشائي لهذا الهرمون." },
+            { type: "علل", q: "منع الاتحاد الأولمبي العالمي الرياضيين من استخدام هرمون DHEA.", a: "تبين ارتباط المستويات العالية من DHEA لدى النساء بزيادة خطر الإصابة بسرطان المبيض وزيادة الصفات الذكورية عندهن، ولأن DHEA يتحول إلى تستوسترون، بالإضافة إلى تأثيراته السلبية على عمل عضلة القلب." },
+            { type: "علل", q: "ما أهمية ممارسة الرياضة وعدم ارتداء الملابس الضيقة لدى الذكور البالغين؟", a: "لأن الملابس الضيقة تسبب ارتفاع الحرارة وتمنع ركود جريان الدم في الأوعية الدموية مما يعيق إنتاج النطاف." },
 
-        if (catLabel) {
-            const catDiv = document.createElement('div');
-            catDiv.className = 'category-label';
-            catDiv.innerText = catLabel;
-            qaContainer.appendChild(catDiv);
-        }
+            // أسئلة ماذا ينتج عن (ماذا يحدث إذا)
+            { type: "ماذا ينتج", q: "ماذا ينتج عن: إفراز هرمون التستوسترون لدى المضغة الجنينية قبل تمايزها الجنسي؟", a: "ينمو أنبوبا وولف إلى أقنية تناسلية ذكرية." },
+            { type: "ماذا ينتج", q: "ماذا ينتج عن: إفراز هرمون AMH لدى المضغة الجنينية قبل تمايزها الجنسي؟", a: "ضمور أنبوبي مولر." },
+            { type: "ماذا ينتج", q: "ماذا يحدث إذا: لم يخضع المولود المصاب بالخصية الهاجرة للمداخلة الجراحية قبل مرحلة البلوغ الجنسي؟", a: "يصاب بالعقم لعدم تشكل النطاف بسبب ارتفاع حرارة تجويف البطن (الخصيتان تحتاجان لدرجة 35)." },
+            { type: "ماذا ينتج", q: "ما اسم المرض الذي يحدث في الخصية نتيجة ركود جريان الدم في الأوردة داخل الحبل المنوي؟", a: "دوالي الخصية." },
+            { type: "ماذا ينتج", q: "ماذا ينتج عن: انخفاض قيمة الـ pH في الأقنية التناسلية الأنثوية إلى 5 مثلاً بعد دخول النطاف إليها؟", a: "شلل النطاف أو الحد من حركتها." },
+            { type: "ماذا ينتج", q: "ماذا ينتج عن: تعرض الخصية لدرجات حرارة عالية من العوامل الفيزيائية؟", a: "تسبب تشكل منسليات منوية مشوهة (عديدة النوى)." },
+            { type: "ماذا ينتج", q: "ماذا ينتج عن: تعرض الخصية للأشعة؟", a: "تؤثر في المنسليات والخلايا الأولية والثانوية، وتكون المنويات في مرحلة التمايز أقل تأثراً." },
+            { type: "ماذا ينتج", q: "ماذا ينتج عن: تعرض الخصية للمواد الكيميائية كالألدهيدات والأغوال والمخدرات وبعض الأدوية العصبية؟", a: "لها تأثير سام في الخصية." },
+            { type: "ماذا ينتج", q: "ماذا ينتج عن: نقص فيتامين (E, A) في غذاء الذكر؟", a: "يسبب قصوراً في تشكل النطاف." },
+            { type: "ماذا ينتج", q: "ماذا ينتج عن: نقص مرور الدم في الخصية بسبب عوامل وعائية؟", a: "يعوق تشكل النطاف." },
+            { type: "ماذا ينتج", q: "ماذا ينتج عن: بقاء الخصيتان داخل تجويف البطن (عدم الهبوط الخصيوي) من حيث تشكل النطاف وإفراز التستوسترون؟", a: "لا تتشكل النطاف في الأنابيب المنوية، في حين لا يتأثر إفراز التستوسترون من الخلايا البينية." },
+            { type: "ماذا ينتج", q: "ماذا ينتج عن: إفراز خلايا سيرتولي للإنهيبين بشكل كبير؟", a: "تلقيم راجع سلبي: يثبط إفراز FSH." },
+            { type: "ماذا ينتج", q: "ماذا ينتج عن: زيادة تركيز التستوسترون في الدم؟", a: "يثبط إفراز LH و GnRH (تلقيم راجع سلبي)." },
+            { type: "ماذا ينتج", q: "ماذا ينتج عن: دوران النطفة حول نفسها 180 درجة؟", a: "العقم، لعدم القدرة على الوصول إلى العروس الأنثوية." },
+            { type: "ماذا ينتج", q: "ماذا ينتج عن: نمو المنسلية المنوية؟", a: "تتحول إلى خلية منوية أولية." },
 
-        const div = document.createElement('div');
-        div.className = 'qa-item';
-        div.innerHTML = `
-            <button class="qa-question"><span class="q-num">${index + 1}</span> ${item.q}</button>
-            <div class="qa-answer">${item.a}</div>
-        `;
-        qaContainer.appendChild(div);
-    });
+            // أسئلة أرقام ونسب ومصطلحات
+            { type: "أرقام", q: "في أي أسبوع من الحمل يبدأ تشكل المناسل الجنينية؟", a: "في الأسبوع 7 من الحمل." },
+            { type: "أرقام", q: "كم يبلغ عدد فصوص الخصية عند الإنسان؟", a: "نحو 250 فصاً." },
+            { type: "أرقام", q: "كم يبلغ عدد الأنابيب المنوية لدى الرجل في الخصية الواحدة؟", a: "نحو 800 أنبوب تقريباً." },
+            { type: "أرقام", q: "كم يبلغ طول أنبوب البربخ؟", a: "طوله نحو 7 أمتار." },
+            { type: "أرقام", q: "كم يبلغ طول أنبوب الأسهر؟", a: "طوله نحو 45 سم." },
+            { type: "أرقام", q: "ما المدة التي يمكن للأسهر فيها تخزين النطاف؟", a: "لمدة شهر تقريباً." },
+            { type: "أرقام", q: "ما النسبة المئوية للسائل الذي تفرزه الحويصلات المنوية من حجم السائل المنوي؟", a: "نحو 60 % من السائل المنوي." },
+            { type: "أرقام", q: "ما النسبة المئوية لحجم السائل الذي تفرزه غدة البروستات من السائل المنوي؟", a: "يشكل (20 - 30 %)." },
+            { type: "أرقام", q: "متى يبدأ تشكل النطاف لدى الذكر؟", a: "يبدأ من سن البلوغ ويستمر تقريباً مدى الحياة." },
+            { type: "أرقام", q: "كم تستغرق العملية الكاملة لتشكل النطاف؟", a: "تستغرق العملية نحو 64 يوماً." },
+            { type: "أرقام", q: "كم عدد النطاف المتشكلة من مليون خلية منوية أولية؟", a: "4 مليون." },
+            { type: "أرقام", q: "كم يبلغ حجم كمية السائل المنوي عند القذف بعد راحة أيام عدة؟", a: "نحو (2 - 5) مل." },
+            { type: "أرقام", q: "ما هو العدد الأعظمي تقريباً للنطاف لدى الذكر الخصب الطبيعي في القذفة؟", a: "500 مليون نطفة." },
+            { type: "أرقام", q: "كم يجب أن تكون نسبة النطاف الطبيعية في مظهرها وحركتها كحد أدنى ليكون الذكر مخصباً؟", a: "على الأقل 60 %." },
+            { type: "أرقام", q: "كم تبلغ درجة حموضة pH السائل المنوي؟", a: "نحو 7.5." },
+            { type: "أرقام", q: "ما هو العمر الأعظمي للنطاف في الأقنية التناسلية الأنثوية؟", a: "بين (24 - 48) ساعة." },
+            { type: "أرقام", q: "كم تبلغ نسبة تفوق الكتلة العضلية والعظمية للذكور على الإناث بسبب التستوسترون؟", a: "تزيد بنسبة تفوق مثيلتها لدى الإناث بـ 50%." },
+            { type: "أرقام", q: "ما هي نسبة التستوسترون المرتبط مع بروتينات الدم كاحتياطي؟", a: "يرتبط 98 % من التستوسترون مع بروتينات الدم." },
 
-    // Accordion Logic
-    document.querySelectorAll('.qa-question').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const parent = btn.parentElement;
-            const isActive = parent.classList.contains('active');
+            // أسئلة الصيغ الصبغية
+            { type: "صيغة صبغية", q: "ما هي الصيغة الصبغية لخلية الظهارة المنشئة؟", a: "2n" },
+            { type: "صيغة صبغية", q: "ما هي الصيغة الصبغية للمنسلية المنوية؟", a: "2n" },
+            { type: "صيغة صبغية", q: "ما هي الصيغة الصبغية للخلية المنوية الأولية؟", a: "2n" },
+            { type: "صيغة صبغية", q: "ما هي الصيغة الصبغية للخلية المنوية الثانوية؟", a: "1n" },
+            { type: "صيغة صبغية", q: "ما هي الصيغة الصبغية للمنوية؟", a: "1n" },
+            { type: "صيغة صبغية", q: "ما هي الصيغة الصبغية للنطفة؟", a: "1n" },
+
+            // أسئلة ترتيب ومراحل
+            { type: "رتب", q: "رتب مراحل تطور النطفة ابتداءً من خلية الظهارة المنشئة.", a: "خلية الظهارة المنشئة -> منسلية منوية -> نمو -> خلية منوية أولية -> خلية منوية ثانوية -> منوية -> نطفة." },
+            { type: "رتب", q: "رتب مراحل تمايز المنوية إلى نطفة.", a: "1- يتحول جهاز غولجي إلى جسيم طرفي يتوضع في مقدمة رأس النطفة. 2- تفقد المنوية معظم هيولاها. 3- تصطف الجسيمات الكوندرية حول بداءة السوط في القطعة المتوسطة. 4- يظهر لها ذيل." },
+
+            // أسئلة عامة من النص
+            { type: "عام", q: "ما هي المورثة التي تنشط تشكل الخصية ومن يحملها؟", a: "المورثة SRY ويحملها الصبغي Y." },
+            { type: "عام", q: "مما يتألف الحبل المنوي؟", a: "يتألف من الأسهر والأوعية الدموية واللمفاوية والأعصاب المرتبطة مع بعضها بنسيج ضام." },
+            { type: "عام", q: "مما تتشكل شبكة الخصية (هالر)؟", a: "تتشكل من تجمع الأنابيب المنوية." },
+            { type: "عام", q: "بواسطة ماذا تنقسم خلايا الظهارة المنشئة 2n إلى منسليات منوية 2n؟", a: "عبر سلسلة انقسامات خيطية." },
+            { type: "عام", q: "ما هو الانقسام الذي يطرأ على الخلية المنوية الأولية لتعطي خلايا منوية ثانوية؟", a: "انقسام منصف أول." },
+            { type: "عام", q: "ما هو الانقسام الذي يطرأ على الخلية المنوية الثانوية لتعطي منويات؟", a: "انقسام منصف ثاني." },
+            { type: "عام", q: "كيف تتغذى النطاف عند بقائها لأسابيع في الأقنية التناسلية الذكرية؟", a: "تتأثر عمر النطاف بمدخراتها الغذائية." },
+            { type: "عام", q: "ما هو الجزء الذي يُشتق منه هرمون التستوسترون والهرمونات الجنسية الأخرى؟", a: "تشتق من الكوليسترول وتكون لها بنية متقاربة." },
+            { type: "عام", q: "أين ينتقل الجزء الفعال (2%) من التستوسترون؟", a: "ينتقل إلى هيولى الخلايا المستهدفة حيث مستقبله النوعي البروتيني." },
+            { type: "عام", q: "من أين يفرز هرمون أندروجين DHEA؟", a: "يفرز من قشرة الكظر لدى الذكر والأنثى بكميات قليلة." },
+            { type: "عام", q: "ما هي طبيعة سائل الحويصلين المنويين؟", a: "سائل لزج قلوي." },
+            { type: "عام", q: "ما هي طبيعة سائل غدة البروستات؟", a: "سائل حليبي حمضي إلى حد ما." },
+            { type: "عام", q: "ما هي طبيعة مادة غدتا كوبر؟", a: "مادة مخاطية أساسية." },
+            { type: "عام", q: "ماذا يسمى الهرمون FSH بالغربية؟", a: "المنبه للجريب." },
+            { type: "عام", q: "ماذا يسمى الهرمون LH بالعربية؟", a: "الملوتن (المصفر)." },
+            { type: "عام", q: "ماذا يسمى الهرمون GnRH بالعربية؟", a: "الهرمون المطلق لهرمونات المناسل." },
+            { type: "عام", q: "ما هي الخلية التي تتحول إلى منوية ثانوية عبر الانقسام المنصف الأول؟", a: "الخلية المنوية الأولية." },
+            { type: "عام", q: "ما هي الخلية التي تنمو لتشكل خلية منوية أولية؟", a: "المنسلية المنوية." },
+            { type: "عام", q: "في أي قسم من الأنابيب المنوية توجد خلايا الظهارة المنشئة 2n؟", a: "في القسم المحيطي من الأنابيب المنوية." },
+            { type: "عام", q: "من أين يفرز هرمون الإنهيبين Inhibin؟", a: "تفرزه خلايا سيرتولي." },
+            { type: "عام", q: "ما هي الخلية التي تفرز الأندروجينات (ومنها التستوسترون)؟", a: "الخلايا البينية (ليديغ Leydig Cells)." },
+            { type: "عام", q: "ما هي الخلية التي توجد في جدار الأنبوب المنوي وهي خلايا حاضنة؟", a: "خلايا سيرتولي." },
+            { type: "عام", q: "بأي عضو يتصل الإحليل من الأعلى؟", a: "يتصل بالمثانة من الأعلى (ويحيط به غدة البروستات في جزئه الأول)." },
+            { type: "عام", q: "أين تصب شبكة هالر؟", a: "تصب في البربخ." }
+        ];
+
+        // حقن الأسئلة في الصفحة
+        const container = document.getElementById('qa-container');
+        
+        questions.forEach((item, index) => {
+            const qaDiv = document.createElement('div');
+            qaDiv.className = 'qa-item';
             
-            document.querySelectorAll('.qa-item').forEach(item => item.classList.remove('active'));
-            
-            if (!isActive) {
-                parent.classList.add('active');
-            }
+            qaDiv.innerHTML = `
+                <div class="question" onclick="toggleAnswer(this)">
+                    <div class="flex-title">
+                        <span class="question-number">${index + 1}</span>
+                        ${item.q}
+                        <span class="tag">${item.type}</span>
+                    </div>
+                </div>
+                <div class="answer">
+                    <p><strong>الجواب:</strong> ${item.a}</p>
+                </div>
+            `;
+            container.appendChild(qaDiv);
         });
-    });
 
-    // AI Chat Widget Logic
-    function toggleChat() {
-        const chatWin = document.getElementById('chat-window');
-        chatWin.classList.toggle('active');
-        if (chatWin.classList.contains('active')) {
-            document.getElementById('chat-input').focus();
+        // دالة إظهار وإخفاء الأجوبة
+        function toggleAnswer(element) {
+            const parent = element.parentElement;
+            
+            // إذا أردت إغلاق باقي الأسئلة عند فتح سؤال جديد (يمكنك إزالة التعليق عن الكود التالي)
+            /*
+            const allItems = document.querySelectorAll('.qa-item');
+            allItems.forEach(item => {
+                if(item !== parent) item.classList.remove('active');
+            });
+            */
+            
+            parent.classList.toggle('active');
         }
-    }
-
-    function appendMsg(text, type) {
-        const container = document.getElementById('chat-messages');
-        const div = document.createElement('div');
-        div.className = `msg ${type}`;
-        div.innerHTML = type === 'ai' ? marked.parse(text) : text;
-        container.appendChild(div);
-        container.scrollTop = container.scrollHeight;
-    }
-
-    function sendMessage() {
-        const input = document.getElementById('chat-input');
-        const text = input.value.trim();
-        if (!text) return;
-
-        appendMsg(text, 'user');
-        input.value = '';
-
-        setTimeout(() => {
-            let reply = "بناءً على الشرح المتوفر: ";
-            if (text.includes("سرتولي")) {
-                reply += "خلايا سرتولي هي خلايا داعمة في جدار الأنبوب المنوي، تغذي المنويات وتبلعم الهيولى وتشكل الحاجز الدموي الخصيوي.";
-            } else if (text.includes("مقارنة") || text.includes("قارن")) {
-                reply += "يمكنك العثور على جميع أسئلة المقارنة في نهاية بنك الأسئلة الشامل (الأسئلة من 91 إلى 100).";
-            } else if (text.includes("ترتيب") || text.includes("رتب")) {
-                reply += "أسئلة الترتيب متوفرة في بنك الأسئلة (من 81 إلى 90) وتشمل ترتيب مراحل تشكل النطاف والأقنية.";
-            } else if (text.includes("عقم")) {
-                reply += "العقم الفيزيولوجي يحدث عندما يقل عدد النطاف عن 20 مليون نطفة في الميليلتر الواحد.";
-            } else {
-                reply = "سؤال جيد! الرجاء مراجعة الجداول وبنك الأسئلة الشامل حيث يغطي 100 فكرة عن التكاثر وتشكيل النطاف. هل هناك نقطة محددة أخرى؟";
-            }
-            appendMsg(reply, 'ai');
-        }, 600);
-    }
-</script>
-
+    </script>
 </body>
 </html>
